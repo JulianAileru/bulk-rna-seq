@@ -18,9 +18,13 @@ with(open("params/trim_galore_params.yaml")) as f1:
 
 
 SAMPLES = get_samples(folder='data/raw-reads')
-genome = config['reference_genome']
+# genome = os.path.basename(config['reference_genome'])
+
 rule all:
   input:
+# --Get Reference Genome--
+    f"reference/genome.fa",
+    f"reference/genome.gtf",
 # ---Quality-Control---
     # FastQC Check 
     expand("pre-processing/{sample}_1_fastqc.html", sample=SAMPLES),
@@ -35,7 +39,7 @@ rule all:
     "multiqc/multiqc_report.html",
 # ---Read Alignment (PhaseI)---
     # Build Reference Genome
-    "reference/genome-index/genome.1.ht2",
+    "reference/genome-index/genome.ht2.done",
     # Map Reads to Reference Genome
     expand("data/sam-files/{sample}.sam",sample=SAMPLES),
 # ---Read Quantification (PhaseII)---
@@ -43,6 +47,32 @@ rule all:
     expand("data/bam-files/{sample}.bam",sample=SAMPLES),
     # Get FeatureCounts Table
     "results/final_counts.txt"
+
+rule get_reference:
+  params:
+    genome_url = config["reference_genome"],
+    gtf_url = config["reference_genome_gtf"]
+  output:
+    o1 = f"reference/archive/{os.path.basename(config['reference_genome'])}",
+    o2 = f"reference/archive/{os.path.basename(config['reference_genome_gtf'])}"
+  shell:
+    """
+    mkdir -p reference/archive
+    wget -L -O {output.o1} {params.genome_url}
+    wget -L -O {output.o2} {params.gtf_url}
+    """
+rule gunzip_reference:
+  input:
+    f1 = f"reference/archive/{os.path.basename(config['reference_genome'])}",
+    f2 = f"reference/archive/{os.path.basename(config['reference_genome_gtf'])}"
+  output:
+    o3 = f'reference/genome.fa',
+    o4 = f'reference/genome.gtf'
+  shell:
+    """
+    gunzip -c {input.f1} > {output.o3}
+    gunzip -c {input.f2} > {output.o4}
+    """
 
 
 rule fastqc_preprocessing:
@@ -100,28 +130,28 @@ rule multiqc_trim:
   conda:
     "envs/multiqc-env.yaml"
   shell:
-     "multiqc pre-processing post-processing -o multiqc"
-
+    "multiqc pre-processing post-processing -o multiqc"
 
 rule hisat_build_index:
   input:
-    genome = f"reference/{genome}"
+    genome = f"reference/genome.fa"
   output:
-    "reference/genome-index/genome.1.ht2",
-    "reference/genome.fa"
+    touch("reference/genome-index/genome.ht2.done")
   conda:
     "envs/hisat2-env.yaml"
   shell:
     """
     mkdir -p reference/genome-index
-    gunzip -c {input.genome} > reference/genome.fa
+    #gunzip -c {input.genome} > reference/genome.fa
     hisat2-build reference/genome.fa reference/genome-index/genome
+    touch {output}
     """
 
 rule hisat_map_reads:
   input:
     r1 = "data/trimmed_reads/{sample}_1_val_1.fq",
     r2 = "data/trimmed_reads/{sample}_2_val_2.fq",
+    idx = "reference/genome-index/genome.ht2.done"
   output:
     "data/sam-files/{sample}.sam"
   conda:

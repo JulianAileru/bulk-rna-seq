@@ -1,0 +1,558 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Unlocked working directory.
+Assuming unrestricted shared filesystem usage.
+host: str-c197.charlotte.edu
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+convert_to_bam        20
+hisat_map_reads        5
+multiqc_trim           1
+total                 27
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri Sep 26 16:16:11 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160185.sam
+    output: data/bam-files/ERR160185.bam, data/bam-files/ERR160185_sorted.bam
+    jobid: 350
+    reason: Missing output files: data/bam-files/ERR160185.bam
+    wildcards: sample=ERR160185
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+
+[Fri Sep 26 16:16:11 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160130.sam
+    output: data/bam-files/ERR160130.bam, data/bam-files/ERR160130_sorted.bam
+    jobid: 330
+    reason: Missing output files: data/bam-files/ERR160130.bam
+    wildcards: sample=ERR160130
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+
+[Fri Sep 26 16:16:11 2025]
+localrule hisat_map_reads:
+    input: data/trimmed_reads/ERR160131_1_val_1.fq, data/trimmed_reads/ERR160131_2_val_2.fq, reference/genome-index/genome.ht2.done
+    output: data/sam-files/ERR160131.sam
+    jobid: 263
+    reason: Missing output files: data/sam-files/ERR160131.sam
+    wildcards: sample=ERR160131
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/ec4bb4ff679a782faea1ad5d465eda30_
+
+[Fri Sep 26 16:16:11 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160140.sam
+    output: data/bam-files/ERR160140.bam, data/bam-files/ERR160140_sorted.bam
+    jobid: 393
+    reason: Missing output files: data/bam-files/ERR160140.bam
+    wildcards: sample=ERR160140
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+slurmstepd: error: *** JOB 9267122 ON str-c197 CANCELLED AT 2025-09-26T16:16:22 ***
+[Fri Sep 26 16:19:27 2025]
+Finished jobid: 335 (Rule: convert_to_bam)
+3 of 29 steps (10%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:19:27 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160168.sam
+    output: data/bam-files/ERR160168.bam, data/bam-files/ERR160168_sorted.bam
+    jobid: 348
+    reason: Missing output files: data/bam-files/ERR160168.bam
+    wildcards: sample=ERR160168
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+20040751 reads; of these:
+  20040751 (100.00%) were paired; of these:
+    1539508 (7.68%) aligned concordantly 0 times
+    16692255 (83.29%) aligned concordantly exactly 1 time
+    1808988 (9.03%) aligned concordantly >1 times
+    ----
+    1539508 pairs aligned concordantly 0 times; of these:
+      287792 (18.69%) aligned discordantly 1 time
+    ----
+    1251716 pairs aligned 0 times concordantly or discordantly; of these:
+      2503432 mates make up the pairs; of these:
+        1321572 (52.79%) aligned 0 times
+        949229 (37.92%) aligned exactly 1 time
+        232631 (9.29%) aligned >1 times
+96.70% overall alignment rate
+[Fri Sep 26 16:20:42 2025]
+Finished jobid: 245 (Rule: hisat_map_reads)
+4 of 29 steps (14%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:20:42 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160184.sam
+    output: data/bam-files/ERR160184.bam, data/bam-files/ERR160184_sorted.bam
+    jobid: 380
+    reason: Missing output files: data/bam-files/ERR160184.bam
+    wildcards: sample=ERR160184
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 14 files and 1 in-memory blocks...
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+[Fri Sep 26 16:27:46 2025]
+Finished jobid: 348 (Rule: convert_to_bam)
+5 of 29 steps (17%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:27:46 2025]
+localrule hisat_map_reads:
+    input: data/trimmed_reads/ERR160170_1_val_1.fq, data/trimmed_reads/ERR160170_2_val_2.fq, reference/genome-index/genome.ht2.done
+    output: data/sam-files/ERR160170.sam
+    jobid: 277
+    reason: Missing output files: data/sam-files/ERR160170.sam
+    wildcards: sample=ERR160170
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/ec4bb4ff679a782faea1ad5d465eda30_
+Select jobs to execute...
+[Fri Sep 26 16:29:30 2025]
+Finished jobid: 380 (Rule: convert_to_bam)
+6 of 29 steps (21%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:29:30 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160150.sam
+    output: data/bam-files/ERR160150.bam, data/bam-files/ERR160150_sorted.bam
+    jobid: 323
+    reason: Missing output files: data/bam-files/ERR160150.bam; Input files updated by another job: data/sam-files/ERR160150.sam
+    wildcards: sample=ERR160150
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+19880747 reads; of these:
+  19880747 (100.00%) were paired; of these:
+    1235064 (6.21%) aligned concordantly 0 times
+    17301644 (87.03%) aligned concordantly exactly 1 time
+    1344039 (6.76%) aligned concordantly >1 times
+    ----
+    1235064 pairs aligned concordantly 0 times; of these:
+      401738 (32.53%) aligned discordantly 1 time
+    ----
+    833326 pairs aligned 0 times concordantly or discordantly; of these:
+      1666652 mates make up the pairs; of these:
+        776984 (46.62%) aligned 0 times
+        723467 (43.41%) aligned exactly 1 time
+        166201 (9.97%) aligned >1 times
+98.05% overall alignment rate
+[Fri Sep 26 16:31:45 2025]
+Finished jobid: 264 (Rule: hisat_map_reads)
+7 of 29 steps (24%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:31:45 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160171.sam
+    output: data/bam-files/ERR160171.bam, data/bam-files/ERR160171_sorted.bam
+    jobid: 349
+    reason: Missing output files: data/bam-files/ERR160171.bam
+    wildcards: sample=ERR160171
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 17 files and 1 in-memory blocks...
+29382277 reads; of these:
+  29382277 (100.00%) were paired; of these:
+    5703808 (19.41%) aligned concordantly 0 times
+    21540766 (73.31%) aligned concordantly exactly 1 time
+    2137703 (7.28%) aligned concordantly >1 times
+    ----
+    5703808 pairs aligned concordantly 0 times; of these:
+      367523 (6.44%) aligned discordantly 1 time
+    ----
+    5336285 pairs aligned 0 times concordantly or discordantly; of these:
+      10672570 mates make up the pairs; of these:
+        6157147 (57.69%) aligned 0 times
+        3922146 (36.75%) aligned exactly 1 time
+        593277 (5.56%) aligned >1 times
+89.52% overall alignment rate
+[Fri Sep 26 16:36:43 2025]
+Finished jobid: 242 (Rule: hisat_map_reads)
+8 of 29 steps (28%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:36:43 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160144.sam
+    output: data/bam-files/ERR160144.bam, data/bam-files/ERR160144_sorted.bam
+    jobid: 379
+    reason: Missing output files: data/bam-files/ERR160144.bam
+    wildcards: sample=ERR160144
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+[Fri Sep 26 16:39:13 2025]
+Finished jobid: 323 (Rule: convert_to_bam)
+9 of 29 steps (31%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:39:13 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160185.sam
+    output: data/bam-files/ERR160185.bam, data/bam-files/ERR160185_sorted.bam
+    jobid: 390
+    reason: Missing output files: data/bam-files/ERR160185.bam
+    wildcards: sample=ERR160185
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule convert_to_bam were not present when the DAG was created:
+{'data/bam-files/ERR160185.bam'}
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[Fri Sep 26 16:40:44 2025]
+Finished jobid: 349 (Rule: convert_to_bam)
+10 of 29 steps (34%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:40:44 2025]
+localrule multiqc_trim:
+    input: pre-processing/ERR160173_1_fastqc.html, pre-processing/ERR160135_1_fastqc.html, pre-processing/ERR160180_1_fastqc.html, pre-processing/ERR160174_1_fastqc.html, pre-processing/ERR160140_1_fastqc.html, pre-processing/ERR160125_1_fastqc.html, pre-processing/ERR160150_1_fastqc.html, pre-processing/ERR160195_1_fastqc.html, pre-processing/ERR160161_1_fastqc.html, pre-processing/ERR166338_1_fastqc.html, pre-processing/ERR160182_1_fastqc.html, pre-processing/ERR160130_1_fastqc.html, pre-processing/ERR160181_1_fastqc.html, pre-processing/ERR160196_1_fastqc.html, pre-processing/ERR160175_1_fastqc.html, pre-processing/ERR160128_1_fastqc.html, pre-processing/ERR160162_1_fastqc.html, pre-processing/ERR160178_1_fastqc.html, pre-processing/ERR160137_1_fastqc.html, pre-processing/ERR160152_1_fastqc.html, pre-processing/ERR160177_1_fastqc.html, pre-processing/ERR160154_1_fastqc.html, pre-processing/ERR160134_1_fastqc.html, pre-processing/ERR160131_1_fastqc.html, pre-processing/ERR160164_1_fastqc.html, pre-processing/ERR160159_1_fastqc.html, pre-processing/ERR160126_1_fastqc.html, pre-processing/ERR160188_1_fastqc.html, pre-processing/ERR160147_1_fastqc.html, pre-processing/ERR160172_1_fastqc.html, pre-processing/ERR160165_1_fastqc.html, pre-processing/ERR160168_1_fastqc.html, pre-processing/ERR160171_1_fastqc.html, pre-processing/ERR160166_1_fastqc.html, pre-processing/ERR160136_1_fastqc.html, pre-processing/ERR160145_1_fastqc.html, pre-processing/ERR160163_1_fastqc.html, pre-processing/ERR160142_1_fastqc.html, pre-processing/ERR160170_1_fastqc.html, pre-processing/ERR160194_1_fastqc.html, pre-processing/ERR160156_1_fastqc.html, pre-processing/ERR160139_1_fastqc.html, pre-processing/ERR160146_1_fastqc.html, pre-processing/ERR160160_1_fastqc.html, pre-processing/ERR160133_1_fastqc.html, pre-processing/ERR160151_1_fastqc.html, pre-processing/ERR160192_1_fastqc.html, pre-processing/ERR160138_1_fastqc.html, pre-processing/ERR160122_1_fastqc.html, pre-processing/ERR160155_1_fastqc.html, pre-processing/ERR160169_1_fastqc.html, pre-processing/ERR166339_1_fastqc.html, pre-processing/ERR160124_1_fastqc.html, pre-processing/ERR160153_1_fastqc.html, pre-processing/ERR160149_1_fastqc.html, pre-processing/ERR160167_1_fastqc.html, pre-processing/ERR160190_1_fastqc.html, pre-processing/ERR160179_1_fastqc.html, pre-processing/ERR160129_1_fastqc.html, pre-processing/ERR160132_1_fastqc.html, pre-processing/ERR160148_1_fastqc.html, pre-processing/ERR160193_1_fastqc.html, pre-processing/ERR160144_1_fastqc.html, pre-processing/ERR160184_1_fastqc.html, pre-processing/ERR160121_1_fastqc.html, pre-processing/ERR160141_1_fastqc.html, pre-processing/ERR160186_1_fastqc.html, pre-processing/ERR160157_1_fastqc.html, pre-processing/ERR160123_1_fastqc.html, pre-processing/ERR160187_1_fastqc.html, pre-processing/ERR160127_1_fastqc.html, pre-processing/ERR160143_1_fastqc.html, pre-processing/ERR160158_1_fastqc.html, pre-processing/ERR160185_1_fastqc.html, pre-processing/ERR160176_1_fastqc.html, pre-processing/ERR160191_1_fastqc.html, pre-processing/ERR160189_1_fastqc.html, pre-processing/ERR160183_1_fastqc.html, pre-processing/ERR160173_2_fastqc.html, pre-processing/ERR160135_2_fastqc.html, pre-processing/ERR160180_2_fastqc.html, pre-processing/ERR160174_2_fastqc.html, pre-processing/ERR160140_2_fastqc.html, pre-processing/ERR160125_2_fastqc.html, pre-processing/ERR160150_2_fastqc.html, pre-processing/ERR160195_2_fastqc.html, pre-processing/ERR160161_2_fastqc.html, pre-processing/ERR166338_2_fastqc.html, pre-processing/ERR160182_2_fastqc.html, pre-processing/ERR160130_2_fastqc.html, pre-processing/ERR160181_2_fastqc.html, pre-processing/ERR160196_2_fastqc.html, pre-processing/ERR160175_2_fastqc.html, pre-processing/ERR160128_2_fastqc.html, pre-processing/ERR160162_2_fastqc.html, pre-processing/ERR160178_2_fastqc.html, pre-processing/ERR160137_2_fastqc.html, pre-processing/ERR160152_2_fastqc.html, pre-processing/ERR160177_2_fastqc.html, pre-processing/ERR160154_2_fastqc.html, pre-processing/ERR160134_2_fastqc.html, pre-processing/ERR160131_2_fastqc.html, pre-processing/ERR160164_2_fastqc.html, pre-processing/ERR160159_2_fastqc.html, pre-processing/ERR160126_2_fastqc.html, pre-processing/ERR160188_2_fastqc.html, pre-processing/ERR160147_2_fastqc.html, pre-processing/ERR160172_2_fastqc.html, pre-processing/ERR160165_2_fastqc.html, pre-processing/ERR160168_2_fastqc.html, pre-processing/ERR160171_2_fastqc.html, pre-processing/ERR160166_2_fastqc.html, pre-processing/ERR160136_2_fastqc.html, pre-processing/ERR160145_2_fastqc.html, pre-processing/ERR160163_2_fastqc.html, pre-processing/ERR160142_2_fastqc.html, pre-processing/ERR160170_2_fastqc.html, pre-processing/ERR160194_2_fastqc.html, pre-processing/ERR160156_2_fastqc.html, pre-processing/ERR160139_2_fastqc.html, pre-processing/ERR160146_2_fastqc.html, pre-processing/ERR160160_2_fastqc.html, pre-processing/ERR160133_2_fastqc.html, pre-processing/ERR160151_2_fastqc.html, pre-processing/ERR160192_2_fastqc.html, pre-processing/ERR160138_2_fastqc.html, pre-processing/ERR160122_2_fastqc.html, pre-processing/ERR160155_2_fastqc.html, pre-processing/ERR160169_2_fastqc.html, pre-processing/ERR166339_2_fastqc.html, pre-processing/ERR160124_2_fastqc.html, pre-processing/ERR160153_2_fastqc.html, pre-processing/ERR160149_2_fastqc.html, pre-processing/ERR160167_2_fastqc.html, pre-processing/ERR160190_2_fastqc.html, pre-processing/ERR160179_2_fastqc.html, pre-processing/ERR160129_2_fastqc.html, pre-processing/ERR160132_2_fastqc.html, pre-processing/ERR160148_2_fastqc.html, pre-processing/ERR160193_2_fastqc.html, pre-processing/ERR160144_2_fastqc.html, pre-processing/ERR160184_2_fastqc.html, pre-processing/ERR160121_2_fastqc.html, pre-processing/ERR160141_2_fastqc.html, pre-processing/ERR160186_2_fastqc.html, pre-processing/ERR160157_2_fastqc.html, pre-processing/ERR160123_2_fastqc.html, pre-processing/ERR160187_2_fastqc.html, pre-processing/ERR160127_2_fastqc.html, pre-processing/ERR160143_2_fastqc.html, pre-processing/ERR160158_2_fastqc.html, pre-processing/ERR160185_2_fastqc.html, pre-processing/ERR160176_2_fastqc.html, pre-processing/ERR160191_2_fastqc.html, pre-processing/ERR160189_2_fastqc.html, pre-processing/ERR160183_2_fastqc.html, post-processing/ERR160173_1_val_1_fastqc.html, post-processing/ERR160135_1_val_1_fastqc.html, post-processing/ERR160180_1_val_1_fastqc.html, post-processing/ERR160174_1_val_1_fastqc.html, post-processing/ERR160140_1_val_1_fastqc.html, post-processing/ERR160125_1_val_1_fastqc.html, post-processing/ERR160150_1_val_1_fastqc.html, post-processing/ERR160195_1_val_1_fastqc.html, post-processing/ERR160161_1_val_1_fastqc.html, post-processing/ERR166338_1_val_1_fastqc.html, post-processing/ERR160182_1_val_1_fastqc.html, post-processing/ERR160130_1_val_1_fastqc.html, post-processing/ERR160181_1_val_1_fastqc.html, post-processing/ERR160196_1_val_1_fastqc.html, post-processing/ERR160175_1_val_1_fastqc.html, post-processing/ERR160128_1_val_1_fastqc.html, post-processing/ERR160162_1_val_1_fastqc.html, post-processing/ERR160178_1_val_1_fastqc.html, post-processing/ERR160137_1_val_1_fastqc.html, post-processing/ERR160152_1_val_1_fastqc.html, post-processing/ERR160177_1_val_1_fastqc.html, post-processing/ERR160154_1_val_1_fastqc.html, post-processing/ERR160134_1_val_1_fastqc.html, post-processing/ERR160131_1_val_1_fastqc.html, post-processing/ERR160164_1_val_1_fastqc.html, post-processing/ERR160159_1_val_1_fastqc.html, post-processing/ERR160126_1_val_1_fastqc.html, post-processing/ERR160188_1_val_1_fastqc.html, post-processing/ERR160147_1_val_1_fastqc.html, post-processing/ERR160172_1_val_1_fastqc.html, post-processing/ERR160165_1_val_1_fastqc.html, post-processing/ERR160168_1_val_1_fastqc.html, post-processing/ERR160171_1_val_1_fastqc.html, post-processing/ERR160166_1_val_1_fastqc.html, post-processing/ERR160136_1_val_1_fastqc.html, post-processing/ERR160145_1_val_1_fastqc.html, post-processing/ERR160163_1_val_1_fastqc.html, post-processing/ERR160142_1_val_1_fastqc.html, post-processing/ERR160170_1_val_1_fastqc.html, post-processing/ERR160194_1_val_1_fastqc.html, post-processing/ERR160156_1_val_1_fastqc.html, post-processing/ERR160139_1_val_1_fastqc.html, post-processing/ERR160146_1_val_1_fastqc.html, post-processing/ERR160160_1_val_1_fastqc.html, post-processing/ERR160133_1_val_1_fastqc.html, post-processing/ERR160151_1_val_1_fastqc.html, post-processing/ERR160192_1_val_1_fastqc.html, post-processing/ERR160138_1_val_1_fastqc.html, post-processing/ERR160122_1_val_1_fastqc.html, post-processing/ERR160155_1_val_1_fastqc.html, post-processing/ERR160169_1_val_1_fastqc.html, post-processing/ERR166339_1_val_1_fastqc.html, post-processing/ERR160124_1_val_1_fastqc.html, post-processing/ERR160153_1_val_1_fastqc.html, post-processing/ERR160149_1_val_1_fastqc.html, post-processing/ERR160167_1_val_1_fastqc.html, post-processing/ERR160190_1_val_1_fastqc.html, post-processing/ERR160179_1_val_1_fastqc.html, post-processing/ERR160129_1_val_1_fastqc.html, post-processing/ERR160132_1_val_1_fastqc.html, post-processing/ERR160148_1_val_1_fastqc.html, post-processing/ERR160193_1_val_1_fastqc.html, post-processing/ERR160144_1_val_1_fastqc.html, post-processing/ERR160184_1_val_1_fastqc.html, post-processing/ERR160121_1_val_1_fastqc.html, post-processing/ERR160141_1_val_1_fastqc.html, post-processing/ERR160186_1_val_1_fastqc.html, post-processing/ERR160157_1_val_1_fastqc.html, post-processing/ERR160123_1_val_1_fastqc.html, post-processing/ERR160187_1_val_1_fastqc.html, post-processing/ERR160127_1_val_1_fastqc.html, post-processing/ERR160143_1_val_1_fastqc.html, post-processing/ERR160158_1_val_1_fastqc.html, post-processing/ERR160185_1_val_1_fastqc.html, post-processing/ERR160176_1_val_1_fastqc.html, post-processing/ERR160191_1_val_1_fastqc.html, post-processing/ERR160189_1_val_1_fastqc.html, post-processing/ERR160183_1_val_1_fastqc.html, post-processing/ERR160173_2_val_2_fastqc.html, post-processing/ERR160135_2_val_2_fastqc.html, post-processing/ERR160180_2_val_2_fastqc.html, post-processing/ERR160174_2_val_2_fastqc.html, post-processing/ERR160140_2_val_2_fastqc.html, post-processing/ERR160125_2_val_2_fastqc.html, post-processing/ERR160150_2_val_2_fastqc.html, post-processing/ERR160195_2_val_2_fastqc.html, post-processing/ERR160161_2_val_2_fastqc.html, post-processing/ERR166338_2_val_2_fastqc.html, post-processing/ERR160182_2_val_2_fastqc.html, post-processing/ERR160130_2_val_2_fastqc.html, post-processing/ERR160181_2_val_2_fastqc.html, post-processing/ERR160196_2_val_2_fastqc.html, post-processing/ERR160175_2_val_2_fastqc.html, post-processing/ERR160128_2_val_2_fastqc.html, post-processing/ERR160162_2_val_2_fastqc.html, post-processing/ERR160178_2_val_2_fastqc.html, post-processing/ERR160137_2_val_2_fastqc.html, post-processing/ERR160152_2_val_2_fastqc.html, post-processing/ERR160177_2_val_2_fastqc.html, post-processing/ERR160154_2_val_2_fastqc.html, post-processing/ERR160134_2_val_2_fastqc.html, post-processing/ERR160131_2_val_2_fastqc.html, post-processing/ERR160164_2_val_2_fastqc.html, post-processing/ERR160159_2_val_2_fastqc.html, post-processing/ERR160126_2_val_2_fastqc.html, post-processing/ERR160188_2_val_2_fastqc.html, post-processing/ERR160147_2_val_2_fastqc.html, post-processing/ERR160172_2_val_2_fastqc.html, post-processing/ERR160165_2_val_2_fastqc.html, post-processing/ERR160168_2_val_2_fastqc.html, post-processing/ERR160171_2_val_2_fastqc.html, post-processing/ERR160166_2_val_2_fastqc.html, post-processing/ERR160136_2_val_2_fastqc.html, post-processing/ERR160145_2_val_2_fastqc.html, post-processing/ERR160163_2_val_2_fastqc.html, post-processing/ERR160142_2_val_2_fastqc.html, post-processing/ERR160170_2_val_2_fastqc.html, post-processing/ERR160194_2_val_2_fastqc.html, post-processing/ERR160156_2_val_2_fastqc.html, post-processing/ERR160139_2_val_2_fastqc.html, post-processing/ERR160146_2_val_2_fastqc.html, post-processing/ERR160160_2_val_2_fastqc.html, post-processing/ERR160133_2_val_2_fastqc.html, post-processing/ERR160151_2_val_2_fastqc.html, post-processing/ERR160192_2_val_2_fastqc.html, post-processing/ERR160138_2_val_2_fastqc.html, post-processing/ERR160122_2_val_2_fastqc.html, post-processing/ERR160155_2_val_2_fastqc.html, post-processing/ERR160169_2_val_2_fastqc.html, post-processing/ERR166339_2_val_2_fastqc.html, post-processing/ERR160124_2_val_2_fastqc.html, post-processing/ERR160153_2_val_2_fastqc.html, post-processing/ERR160149_2_val_2_fastqc.html, post-processing/ERR160167_2_val_2_fastqc.html, post-processing/ERR160190_2_val_2_fastqc.html, post-processing/ERR160179_2_val_2_fastqc.html, post-processing/ERR160129_2_val_2_fastqc.html, post-processing/ERR160132_2_val_2_fastqc.html, post-processing/ERR160148_2_val_2_fastqc.html, post-processing/ERR160193_2_val_2_fastqc.html, post-processing/ERR160144_2_val_2_fastqc.html, post-processing/ERR160184_2_val_2_fastqc.html, post-processing/ERR160121_2_val_2_fastqc.html, post-processing/ERR160141_2_val_2_fastqc.html, post-processing/ERR160186_2_val_2_fastqc.html, post-processing/ERR160157_2_val_2_fastqc.html, post-processing/ERR160123_2_val_2_fastqc.html, post-processing/ERR160187_2_val_2_fastqc.html, post-processing/ERR160127_2_val_2_fastqc.html, post-processing/ERR160143_2_val_2_fastqc.html, post-processing/ERR160158_2_val_2_fastqc.html, post-processing/ERR160185_2_val_2_fastqc.html, post-processing/ERR160176_2_val_2_fastqc.html, post-processing/ERR160191_2_val_2_fastqc.html, post-processing/ERR160189_2_val_2_fastqc.html, post-processing/ERR160183_2_val_2_fastqc.html
+    output: multiqc/multiqc_report.html
+    jobid: 237
+    reason: Missing output files: multiqc/multiqc_report.html; Code has changed since last execution; Software environment definition has changed since last execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/32cc0ba8e22daaa18c38e592f5136705_
+Select jobs to execute...
+
+  /// MultiQC 🔍 | v1.19 (fd4041a)
+
+|           multiqc | MultiQC Version v1.31 now available!
+|           multiqc | Search path : /projects/inesmelo_research/jaileru/rna-exploration/bulk-rna-seq/workflow/pre-processing
+|           multiqc | Search path : /projects/inesmelo_research/jaileru/rna-exploration/bulk-rna-seq/workflow/post-processing
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 624/624  
+|            fastqc | Found 312 reports
+|           multiqc | Report      : multiqc/multiqc_report.html
+|           multiqc | Data        : multiqc/multiqc_data
+|           multiqc | Flat-image plots used. Disable with '--interactive'. See 
+docs.
+|           multiqc | MultiQC complete
+[Fri Sep 26 16:41:40 2025]
+Finished jobid: 237 (Rule: multiqc_trim)
+11 of 29 steps (38%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:41:40 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160179.sam
+    output: data/bam-files/ERR160179.bam, data/bam-files/ERR160179_sorted.bam
+    jobid: 374
+    reason: Missing output files: data/bam-files/ERR160179.bam
+    wildcards: sample=ERR160179
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+[bam_sort_core] merging from 22 files and 1 in-memory blocks...
+[Fri Sep 26 16:47:52 2025]
+Finished jobid: 390 (Rule: convert_to_bam)
+12 of 29 steps (41%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:47:52 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160174.sam
+    output: data/bam-files/ERR160174.bam, data/bam-files/ERR160174_sorted.bam
+    jobid: 320
+    reason: Missing output files: data/bam-files/ERR160174.bam; Input files updated by another job: data/sam-files/ERR160174.sam
+    wildcards: sample=ERR160174
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[Fri Sep 26 16:49:55 2025]
+Finished jobid: 379 (Rule: convert_to_bam)
+13 of 29 steps (45%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:49:55 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160124.sam
+    output: data/bam-files/ERR160124.bam, data/bam-files/ERR160124_sorted.bam
+    jobid: 369
+    reason: Missing output files: data/bam-files/ERR160124.bam
+    wildcards: sample=ERR160124
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 24 files and 1 in-memory blocks...
+[Fri Sep 26 16:55:52 2025]
+Finished jobid: 374 (Rule: convert_to_bam)
+14 of 29 steps (48%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:55:52 2025]
+localrule hisat_map_reads:
+    input: data/trimmed_reads/ERR160131_1_val_1.fq, data/trimmed_reads/ERR160131_2_val_2.fq, reference/genome-index/genome.ht2.done
+    output: data/sam-files/ERR160131.sam
+    jobid: 262
+    reason: Missing output files: data/sam-files/ERR160131.sam
+    wildcards: sample=ERR160131
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule hisat_map_reads were not present when the DAG was created:
+{'data/sam-files/ERR160131.sam'}
+Activating conda environment: .snakemake/conda/ec4bb4ff679a782faea1ad5d465eda30_
+Select jobs to execute...
+[bam_sort_core] merging from 23 files and 1 in-memory blocks...
+23542313 reads; of these:
+  23542313 (100.00%) were paired; of these:
+    1711025 (7.27%) aligned concordantly 0 times
+    20363168 (86.50%) aligned concordantly exactly 1 time
+    1468120 (6.24%) aligned concordantly >1 times
+    ----
+    1711025 pairs aligned concordantly 0 times; of these:
+      548523 (32.06%) aligned discordantly 1 time
+    ----
+    1162502 pairs aligned 0 times concordantly or discordantly; of these:
+      2325004 mates make up the pairs; of these:
+        1059358 (45.56%) aligned 0 times
+        1044399 (44.92%) aligned exactly 1 time
+        221247 (9.52%) aligned >1 times
+97.75% overall alignment rate
+[Fri Sep 26 16:58:57 2025]
+Finished jobid: 277 (Rule: hisat_map_reads)
+15 of 29 steps (52%) done
+Execute 1 jobs...
+
+[Fri Sep 26 16:58:57 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160122.sam
+    output: data/bam-files/ERR160122.bam, data/bam-files/ERR160122_sorted.bam
+    jobid: 365
+    reason: Missing output files: data/bam-files/ERR160122.bam
+    wildcards: sample=ERR160122
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[Fri Sep 26 17:01:49 2025]
+Finished jobid: 320 (Rule: convert_to_bam)
+16 of 29 steps (55%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:01:49 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160140.sam
+    output: data/bam-files/ERR160140.bam, data/bam-files/ERR160140_sorted.bam
+    jobid: 321
+    reason: Missing output files: data/bam-files/ERR160140.bam
+    wildcards: sample=ERR160140
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule convert_to_bam were not present when the DAG was created:
+{'data/bam-files/ERR160140.bam'}
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 31 files and 1 in-memory blocks...
+[bam_sort_core] merging from 18 files and 1 in-memory blocks...
+[Fri Sep 26 17:08:12 2025]
+Finished jobid: 369 (Rule: convert_to_bam)
+17 of 29 steps (59%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:08:12 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160130.sam
+    output: data/bam-files/ERR160130.bam, data/bam-files/ERR160130_sorted.bam
+    jobid: 328
+    reason: Missing output files: data/bam-files/ERR160130.bam
+    wildcards: sample=ERR160130
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule convert_to_bam were not present when the DAG was created:
+{'data/bam-files/ERR160130.bam'}
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[Fri Sep 26 17:09:25 2025]
+Finished jobid: 365 (Rule: convert_to_bam)
+18 of 29 steps (62%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:09:25 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160157.sam
+    output: data/bam-files/ERR160157.bam, data/bam-files/ERR160157_sorted.bam
+    jobid: 384
+    reason: Missing output files: data/bam-files/ERR160157.bam
+    wildcards: sample=ERR160157
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 27 files and 1 in-memory blocks...
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+[Fri Sep 26 17:17:35 2025]
+Finished jobid: 321 (Rule: convert_to_bam)
+19 of 29 steps (66%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:17:36 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160180.sam
+    output: data/bam-files/ERR160180.bam, data/bam-files/ERR160180_sorted.bam
+    jobid: 319
+    reason: Missing output files: data/bam-files/ERR160180.bam
+    wildcards: sample=ERR160180
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[Fri Sep 26 17:18:26 2025]
+Finished jobid: 384 (Rule: convert_to_bam)
+20 of 29 steps (69%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:18:26 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160146.sam
+    output: data/bam-files/ERR160146.bam, data/bam-files/ERR160146_sorted.bam
+    jobid: 359
+    reason: Missing output files: data/bam-files/ERR160146.bam
+    wildcards: sample=ERR160146
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 28 files and 1 in-memory blocks...
+[Fri Sep 26 17:24:29 2025]
+Finished jobid: 328 (Rule: convert_to_bam)
+21 of 29 steps (72%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:24:29 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160170.sam
+    output: data/bam-files/ERR160170.bam, data/bam-files/ERR160170_sorted.bam
+    jobid: 355
+    reason: Missing output files: data/bam-files/ERR160170.bam; Input files updated by another job: data/sam-files/ERR160170.sam
+    wildcards: sample=ERR160170
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 21 files and 1 in-memory blocks...
+[bam_sort_core] merging from 27 files and 1 in-memory blocks...
+[Fri Sep 26 17:30:54 2025]
+Finished jobid: 359 (Rule: convert_to_bam)
+22 of 29 steps (76%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:30:54 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160154.sam
+    output: data/bam-files/ERR160154.bam, data/bam-files/ERR160154_sorted.bam
+    jobid: 338
+    reason: Missing output files: data/bam-files/ERR160154.bam
+    wildcards: sample=ERR160154
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+Select jobs to execute...
+[bam_sort_core] merging from 18 files and 1 in-memory blocks...
+[Fri Sep 26 17:32:36 2025]
+Finished jobid: 319 (Rule: convert_to_bam)
+23 of 29 steps (79%) done
+Execute 1 jobs...
+
+[Fri Sep 26 17:32:36 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160159.sam
+    output: data/bam-files/ERR160159.bam, data/bam-files/ERR160159_sorted.bam
+    jobid: 342
+    reason: Missing output files: data/bam-files/ERR160159.bam; Input files updated by another job: data/sam-files/ERR160159.sam
+    wildcards: sample=ERR160159
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+25208890 reads; of these:
+  25208890 (100.00%) were paired; of these:
+    2022822 (8.02%) aligned concordantly 0 times
+    21361535 (84.74%) aligned concordantly exactly 1 time
+    1824533 (7.24%) aligned concordantly >1 times
+    ----
+    2022822 pairs aligned concordantly 0 times; of these:
+      383293 (18.95%) aligned discordantly 1 time
+    ----
+    1639529 pairs aligned 0 times concordantly or discordantly; of these:
+      3279058 mates make up the pairs; of these:
+        1548280 (47.22%) aligned 0 times
+        1424557 (43.44%) aligned exactly 1 time
+        306221 (9.34%) aligned >1 times
+96.93% overall alignment rate
+[Fri Sep 26 17:32:45 2025]
+Finished jobid: 262 (Rule: hisat_map_reads)
+24 of 29 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Sep 26 17:32:45 2025]
+localrule convert_to_bam:
+    input: data/sam-files/ERR160131.sam
+    output: data/bam-files/ERR160131.bam, data/bam-files/ERR160131_sorted.bam
+    jobid: 340
+    reason: Missing output files: data/bam-files/ERR160131.bam; Input files updated by another job: data/sam-files/ERR160131.sam
+    wildcards: sample=ERR160131
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/d50ff2fb38da2663fe415044accf09d9_
+[Fri Sep 26 17:35:17 2025]
+Finished jobid: 355 (Rule: convert_to_bam)
+25 of 29 steps (86%) done
+[bam_sort_core] merging from 17 files and 1 in-memory blocks...
+[bam_sort_core] merging from 16 files and 1 in-memory blocks...
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+[Fri Sep 26 17:40:45 2025]
+Finished jobid: 338 (Rule: convert_to_bam)
+26 of 29 steps (90%) done
+[Fri Sep 26 17:41:55 2025]
+Finished jobid: 342 (Rule: convert_to_bam)
+27 of 29 steps (93%) done
+[Fri Sep 26 17:44:19 2025]
+Finished jobid: 340 (Rule: convert_to_bam)
+28 of 29 steps (97%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Sep 26 17:44:19 2025]
+localrule all:
+    input: reference/genome.fa, reference/genome.gtf, pre-processing/ERR160173_1_fastqc.html, pre-processing/ERR160135_1_fastqc.html, pre-processing/ERR160180_1_fastqc.html, pre-processing/ERR160174_1_fastqc.html, pre-processing/ERR160140_1_fastqc.html, pre-processing/ERR160125_1_fastqc.html, pre-processing/ERR160150_1_fastqc.html, pre-processing/ERR160195_1_fastqc.html, pre-processing/ERR160161_1_fastqc.html, pre-processing/ERR166338_1_fastqc.html, pre-processing/ERR160182_1_fastqc.html, pre-processing/ERR160130_1_fastqc.html, pre-processing/ERR160181_1_fastqc.html, pre-processing/ERR160196_1_fastqc.html, pre-processing/ERR160175_1_fastqc.html, pre-processing/ERR160128_1_fastqc.html, pre-processing/ERR160162_1_fastqc.html, pre-processing/ERR160178_1_fastqc.html, pre-processing/ERR160137_1_fastqc.html, pre-processing/ERR160152_1_fastqc.html, pre-processing/ERR160177_1_fastqc.html, pre-processing/ERR160154_1_fastqc.html, pre-processing/ERR160134_1_fastqc.html, pre-processing/ERR160131_1_fastqc.html, pre-processing/ERR160164_1_fastqc.html, pre-processing/ERR160159_1_fastqc.html, pre-processing/ERR160126_1_fastqc.html, pre-processing/ERR160188_1_fastqc.html, pre-processing/ERR160147_1_fastqc.html, pre-processing/ERR160172_1_fastqc.html, pre-processing/ERR160165_1_fastqc.html, pre-processing/ERR160168_1_fastqc.html, pre-processing/ERR160171_1_fastqc.html, pre-processing/ERR160166_1_fastqc.html, pre-processing/ERR160136_1_fastqc.html, pre-processing/ERR160145_1_fastqc.html, pre-processing/ERR160163_1_fastqc.html, pre-processing/ERR160142_1_fastqc.html, pre-processing/ERR160170_1_fastqc.html, pre-processing/ERR160194_1_fastqc.html, pre-processing/ERR160156_1_fastqc.html, pre-processing/ERR160139_1_fastqc.html, pre-processing/ERR160146_1_fastqc.html, pre-processing/ERR160160_1_fastqc.html, pre-processing/ERR160133_1_fastqc.html, pre-processing/ERR160151_1_fastqc.html, pre-processing/ERR160192_1_fastqc.html, pre-processing/ERR160138_1_fastqc.html, pre-processing/ERR160122_1_fastqc.html, pre-processing/ERR160155_1_fastqc.html, pre-processing/ERR160169_1_fastqc.html, pre-processing/ERR166339_1_fastqc.html, pre-processing/ERR160124_1_fastqc.html, pre-processing/ERR160153_1_fastqc.html, pre-processing/ERR160149_1_fastqc.html, pre-processing/ERR160167_1_fastqc.html, pre-processing/ERR160190_1_fastqc.html, pre-processing/ERR160179_1_fastqc.html, pre-processing/ERR160129_1_fastqc.html, pre-processing/ERR160132_1_fastqc.html, pre-processing/ERR160148_1_fastqc.html, pre-processing/ERR160193_1_fastqc.html, pre-processing/ERR160144_1_fastqc.html, pre-processing/ERR160184_1_fastqc.html, pre-processing/ERR160121_1_fastqc.html, pre-processing/ERR160141_1_fastqc.html, pre-processing/ERR160186_1_fastqc.html, pre-processing/ERR160157_1_fastqc.html, pre-processing/ERR160123_1_fastqc.html, pre-processing/ERR160187_1_fastqc.html, pre-processing/ERR160127_1_fastqc.html, pre-processing/ERR160143_1_fastqc.html, pre-processing/ERR160158_1_fastqc.html, pre-processing/ERR160185_1_fastqc.html, pre-processing/ERR160176_1_fastqc.html, pre-processing/ERR160191_1_fastqc.html, pre-processing/ERR160189_1_fastqc.html, pre-processing/ERR160183_1_fastqc.html, pre-processing/ERR160173_2_fastqc.html, pre-processing/ERR160135_2_fastqc.html, pre-processing/ERR160180_2_fastqc.html, pre-processing/ERR160174_2_fastqc.html, pre-processing/ERR160140_2_fastqc.html, pre-processing/ERR160125_2_fastqc.html, pre-processing/ERR160150_2_fastqc.html, pre-processing/ERR160195_2_fastqc.html, pre-processing/ERR160161_2_fastqc.html, pre-processing/ERR166338_2_fastqc.html, pre-processing/ERR160182_2_fastqc.html, pre-processing/ERR160130_2_fastqc.html, pre-processing/ERR160181_2_fastqc.html, pre-processing/ERR160196_2_fastqc.html, pre-processing/ERR160175_2_fastqc.html, pre-processing/ERR160128_2_fastqc.html, pre-processing/ERR160162_2_fastqc.html, pre-processing/ERR160178_2_fastqc.html, pre-processing/ERR160137_2_fastqc.html, pre-processing/ERR160152_2_fastqc.html, pre-processing/ERR160177_2_fastqc.html, pre-processing/ERR160154_2_fastqc.html, pre-processing/ERR160134_2_fastqc.html, pre-processing/ERR160131_2_fastqc.html, pre-processing/ERR160164_2_fastqc.html, pre-processing/ERR160159_2_fastqc.html, pre-processing/ERR160126_2_fastqc.html, pre-processing/ERR160188_2_fastqc.html, pre-processing/ERR160147_2_fastqc.html, pre-processing/ERR160172_2_fastqc.html, pre-processing/ERR160165_2_fastqc.html, pre-processing/ERR160168_2_fastqc.html, pre-processing/ERR160171_2_fastqc.html, pre-processing/ERR160166_2_fastqc.html, pre-processing/ERR160136_2_fastqc.html, pre-processing/ERR160145_2_fastqc.html, pre-processing/ERR160163_2_fastqc.html, pre-processing/ERR160142_2_fastqc.html, pre-processing/ERR160170_2_fastqc.html, pre-processing/ERR160194_2_fastqc.html, pre-processing/ERR160156_2_fastqc.html, pre-processing/ERR160139_2_fastqc.html, pre-processing/ERR160146_2_fastqc.html, pre-processing/ERR160160_2_fastqc.html, pre-processing/ERR160133_2_fastqc.html, pre-processing/ERR160151_2_fastqc.html, pre-processing/ERR160192_2_fastqc.html, pre-processing/ERR160138_2_fastqc.html, pre-processing/ERR160122_2_fastqc.html, pre-processing/ERR160155_2_fastqc.html, pre-processing/ERR160169_2_fastqc.html, pre-processing/ERR166339_2_fastqc.html, pre-processing/ERR160124_2_fastqc.html, pre-processing/ERR160153_2_fastqc.html, pre-processing/ERR160149_2_fastqc.html, pre-processing/ERR160167_2_fastqc.html, pre-processing/ERR160190_2_fastqc.html, pre-processing/ERR160179_2_fastqc.html, pre-processing/ERR160129_2_fastqc.html, pre-processing/ERR160132_2_fastqc.html, pre-processing/ERR160148_2_fastqc.html, pre-processing/ERR160193_2_fastqc.html, pre-processing/ERR160144_2_fastqc.html, pre-processing/ERR160184_2_fastqc.html, pre-processing/ERR160121_2_fastqc.html, pre-processing/ERR160141_2_fastqc.html, pre-processing/ERR160186_2_fastqc.html, pre-processing/ERR160157_2_fastqc.html, pre-processing/ERR160123_2_fastqc.html, pre-processing/ERR160187_2_fastqc.html, pre-processing/ERR160127_2_fastqc.html, pre-processing/ERR160143_2_fastqc.html, pre-processing/ERR160158_2_fastqc.html, pre-processing/ERR160185_2_fastqc.html, pre-processing/ERR160176_2_fastqc.html, pre-processing/ERR160191_2_fastqc.html, pre-processing/ERR160189_2_fastqc.html, pre-processing/ERR160183_2_fastqc.html, data/trimmed_reads/ERR160173_1_val_1.fq, data/trimmed_reads/ERR160135_1_val_1.fq, data/trimmed_reads/ERR160180_1_val_1.fq, data/trimmed_reads/ERR160174_1_val_1.fq, data/trimmed_reads/ERR160140_1_val_1.fq, data/trimmed_reads/ERR160125_1_val_1.fq, data/trimmed_reads/ERR160150_1_val_1.fq, data/trimmed_reads/ERR160195_1_val_1.fq, data/trimmed_reads/ERR160161_1_val_1.fq, data/trimmed_reads/ERR166338_1_val_1.fq, data/trimmed_reads/ERR160182_1_val_1.fq, data/trimmed_reads/ERR160130_1_val_1.fq, data/trimmed_reads/ERR160181_1_val_1.fq, data/trimmed_reads/ERR160196_1_val_1.fq, data/trimmed_reads/ERR160175_1_val_1.fq, data/trimmed_reads/ERR160128_1_val_1.fq, data/trimmed_reads/ERR160162_1_val_1.fq, data/trimmed_reads/ERR160178_1_val_1.fq, data/trimmed_reads/ERR160137_1_val_1.fq, data/trimmed_reads/ERR160152_1_val_1.fq, data/trimmed_reads/ERR160177_1_val_1.fq, data/trimmed_reads/ERR160154_1_val_1.fq, data/trimmed_reads/ERR160134_1_val_1.fq, data/trimmed_reads/ERR160131_1_val_1.fq, data/trimmed_reads/ERR160164_1_val_1.fq, data/trimmed_reads/ERR160159_1_val_1.fq, data/trimmed_reads/ERR160126_1_val_1.fq, data/trimmed_reads/ERR160188_1_val_1.fq, data/trimmed_reads/ERR160147_1_val_1.fq, data/trimmed_reads/ERR160172_1_val_1.fq, data/trimmed_reads/ERR160165_1_val_1.fq, data/trimmed_reads/ERR160168_1_val_1.fq, data/trimmed_reads/ERR160171_1_val_1.fq, data/trimmed_reads/ERR160166_1_val_1.fq, data/trimmed_reads/ERR160136_1_val_1.fq, data/trimmed_reads/ERR160145_1_val_1.fq, data/trimmed_reads/ERR160163_1_val_1.fq, data/trimmed_reads/ERR160142_1_val_1.fq, data/trimmed_reads/ERR160170_1_val_1.fq, data/trimmed_reads/ERR160194_1_val_1.fq, data/trimmed_reads/ERR160156_1_val_1.fq, data/trimmed_reads/ERR160139_1_val_1.fq, data/trimmed_reads/ERR160146_1_val_1.fq, data/trimmed_reads/ERR160160_1_val_1.fq, data/trimmed_reads/ERR160133_1_val_1.fq, data/trimmed_reads/ERR160151_1_val_1.fq, data/trimmed_reads/ERR160192_1_val_1.fq, data/trimmed_reads/ERR160138_1_val_1.fq, data/trimmed_reads/ERR160122_1_val_1.fq, data/trimmed_reads/ERR160155_1_val_1.fq, data/trimmed_reads/ERR160169_1_val_1.fq, data/trimmed_reads/ERR166339_1_val_1.fq, data/trimmed_reads/ERR160124_1_val_1.fq, data/trimmed_reads/ERR160153_1_val_1.fq, data/trimmed_reads/ERR160149_1_val_1.fq, data/trimmed_reads/ERR160167_1_val_1.fq, data/trimmed_reads/ERR160190_1_val_1.fq, data/trimmed_reads/ERR160179_1_val_1.fq, data/trimmed_reads/ERR160129_1_val_1.fq, data/trimmed_reads/ERR160132_1_val_1.fq, data/trimmed_reads/ERR160148_1_val_1.fq, data/trimmed_reads/ERR160193_1_val_1.fq, data/trimmed_reads/ERR160144_1_val_1.fq, data/trimmed_reads/ERR160184_1_val_1.fq, data/trimmed_reads/ERR160121_1_val_1.fq, data/trimmed_reads/ERR160141_1_val_1.fq, data/trimmed_reads/ERR160186_1_val_1.fq, data/trimmed_reads/ERR160157_1_val_1.fq, data/trimmed_reads/ERR160123_1_val_1.fq, data/trimmed_reads/ERR160187_1_val_1.fq, data/trimmed_reads/ERR160127_1_val_1.fq, data/trimmed_reads/ERR160143_1_val_1.fq, data/trimmed_reads/ERR160158_1_val_1.fq, data/trimmed_reads/ERR160185_1_val_1.fq, data/trimmed_reads/ERR160176_1_val_1.fq, data/trimmed_reads/ERR160191_1_val_1.fq, data/trimmed_reads/ERR160189_1_val_1.fq, data/trimmed_reads/ERR160183_1_val_1.fq, data/trimmed_reads/ERR160173_2_val_2.fq, data/trimmed_reads/ERR160135_2_val_2.fq, data/trimmed_reads/ERR160180_2_val_2.fq, data/trimmed_reads/ERR160174_2_val_2.fq, data/trimmed_reads/ERR160140_2_val_2.fq, data/trimmed_reads/ERR160125_2_val_2.fq, data/trimmed_reads/ERR160150_2_val_2.fq, data/trimmed_reads/ERR160195_2_val_2.fq, data/trimmed_reads/ERR160161_2_val_2.fq, data/trimmed_reads/ERR166338_2_val_2.fq, data/trimmed_reads/ERR160182_2_val_2.fq, data/trimmed_reads/ERR160130_2_val_2.fq, data/trimmed_reads/ERR160181_2_val_2.fq, data/trimmed_reads/ERR160196_2_val_2.fq, data/trimmed_reads/ERR160175_2_val_2.fq, data/trimmed_reads/ERR160128_2_val_2.fq, data/trimmed_reads/ERR160162_2_val_2.fq, data/trimmed_reads/ERR160178_2_val_2.fq, data/trimmed_reads/ERR160137_2_val_2.fq, data/trimmed_reads/ERR160152_2_val_2.fq, data/trimmed_reads/ERR160177_2_val_2.fq, data/trimmed_reads/ERR160154_2_val_2.fq, data/trimmed_reads/ERR160134_2_val_2.fq, data/trimmed_reads/ERR160131_2_val_2.fq, data/trimmed_reads/ERR160164_2_val_2.fq, data/trimmed_reads/ERR160159_2_val_2.fq, data/trimmed_reads/ERR160126_2_val_2.fq, data/trimmed_reads/ERR160188_2_val_2.fq, data/trimmed_reads/ERR160147_2_val_2.fq, data/trimmed_reads/ERR160172_2_val_2.fq, data/trimmed_reads/ERR160165_2_val_2.fq, data/trimmed_reads/ERR160168_2_val_2.fq, data/trimmed_reads/ERR160171_2_val_2.fq, data/trimmed_reads/ERR160166_2_val_2.fq, data/trimmed_reads/ERR160136_2_val_2.fq, data/trimmed_reads/ERR160145_2_val_2.fq, data/trimmed_reads/ERR160163_2_val_2.fq, data/trimmed_reads/ERR160142_2_val_2.fq, data/trimmed_reads/ERR160170_2_val_2.fq, data/trimmed_reads/ERR160194_2_val_2.fq, data/trimmed_reads/ERR160156_2_val_2.fq, data/trimmed_reads/ERR160139_2_val_2.fq, data/trimmed_reads/ERR160146_2_val_2.fq, data/trimmed_reads/ERR160160_2_val_2.fq, data/trimmed_reads/ERR160133_2_val_2.fq, data/trimmed_reads/ERR160151_2_val_2.fq, data/trimmed_reads/ERR160192_2_val_2.fq, data/trimmed_reads/ERR160138_2_val_2.fq, data/trimmed_reads/ERR160122_2_val_2.fq, data/trimmed_reads/ERR160155_2_val_2.fq, data/trimmed_reads/ERR160169_2_val_2.fq, data/trimmed_reads/ERR166339_2_val_2.fq, data/trimmed_reads/ERR160124_2_val_2.fq, data/trimmed_reads/ERR160153_2_val_2.fq, data/trimmed_reads/ERR160149_2_val_2.fq, data/trimmed_reads/ERR160167_2_val_2.fq, data/trimmed_reads/ERR160190_2_val_2.fq, data/trimmed_reads/ERR160179_2_val_2.fq, data/trimmed_reads/ERR160129_2_val_2.fq, data/trimmed_reads/ERR160132_2_val_2.fq, data/trimmed_reads/ERR160148_2_val_2.fq, data/trimmed_reads/ERR160193_2_val_2.fq, data/trimmed_reads/ERR160144_2_val_2.fq, data/trimmed_reads/ERR160184_2_val_2.fq, data/trimmed_reads/ERR160121_2_val_2.fq, data/trimmed_reads/ERR160141_2_val_2.fq, data/trimmed_reads/ERR160186_2_val_2.fq, data/trimmed_reads/ERR160157_2_val_2.fq, data/trimmed_reads/ERR160123_2_val_2.fq, data/trimmed_reads/ERR160187_2_val_2.fq, data/trimmed_reads/ERR160127_2_val_2.fq, data/trimmed_reads/ERR160143_2_val_2.fq, data/trimmed_reads/ERR160158_2_val_2.fq, data/trimmed_reads/ERR160185_2_val_2.fq, data/trimmed_reads/ERR160176_2_val_2.fq, data/trimmed_reads/ERR160191_2_val_2.fq, data/trimmed_reads/ERR160189_2_val_2.fq, data/trimmed_reads/ERR160183_2_val_2.fq, post-processing/ERR160173_1_val_1_fastqc.html, post-processing/ERR160135_1_val_1_fastqc.html, post-processing/ERR160180_1_val_1_fastqc.html, post-processing/ERR160174_1_val_1_fastqc.html, post-processing/ERR160140_1_val_1_fastqc.html, post-processing/ERR160125_1_val_1_fastqc.html, post-processing/ERR160150_1_val_1_fastqc.html, post-processing/ERR160195_1_val_1_fastqc.html, post-processing/ERR160161_1_val_1_fastqc.html, post-processing/ERR166338_1_val_1_fastqc.html, post-processing/ERR160182_1_val_1_fastqc.html, post-processing/ERR160130_1_val_1_fastqc.html, post-processing/ERR160181_1_val_1_fastqc.html, post-processing/ERR160196_1_val_1_fastqc.html, post-processing/ERR160175_1_val_1_fastqc.html, post-processing/ERR160128_1_val_1_fastqc.html, post-processing/ERR160162_1_val_1_fastqc.html, post-processing/ERR160178_1_val_1_fastqc.html, post-processing/ERR160137_1_val_1_fastqc.html, post-processing/ERR160152_1_val_1_fastqc.html, post-processing/ERR160177_1_val_1_fastqc.html, post-processing/ERR160154_1_val_1_fastqc.html, post-processing/ERR160134_1_val_1_fastqc.html, post-processing/ERR160131_1_val_1_fastqc.html, post-processing/ERR160164_1_val_1_fastqc.html, post-processing/ERR160159_1_val_1_fastqc.html, post-processing/ERR160126_1_val_1_fastqc.html, post-processing/ERR160188_1_val_1_fastqc.html, post-processing/ERR160147_1_val_1_fastqc.html, post-processing/ERR160172_1_val_1_fastqc.html, post-processing/ERR160165_1_val_1_fastqc.html, post-processing/ERR160168_1_val_1_fastqc.html, post-processing/ERR160171_1_val_1_fastqc.html, post-processing/ERR160166_1_val_1_fastqc.html, post-processing/ERR160136_1_val_1_fastqc.html, post-processing/ERR160145_1_val_1_fastqc.html, post-processing/ERR160163_1_val_1_fastqc.html, post-processing/ERR160142_1_val_1_fastqc.html, post-processing/ERR160170_1_val_1_fastqc.html, post-processing/ERR160194_1_val_1_fastqc.html, post-processing/ERR160156_1_val_1_fastqc.html, post-processing/ERR160139_1_val_1_fastqc.html, post-processing/ERR160146_1_val_1_fastqc.html, post-processing/ERR160160_1_val_1_fastqc.html, post-processing/ERR160133_1_val_1_fastqc.html, post-processing/ERR160151_1_val_1_fastqc.html, post-processing/ERR160192_1_val_1_fastqc.html, post-processing/ERR160138_1_val_1_fastqc.html, post-processing/ERR160122_1_val_1_fastqc.html, post-processing/ERR160155_1_val_1_fastqc.html, post-processing/ERR160169_1_val_1_fastqc.html, post-processing/ERR166339_1_val_1_fastqc.html, post-processing/ERR160124_1_val_1_fastqc.html, post-processing/ERR160153_1_val_1_fastqc.html, post-processing/ERR160149_1_val_1_fastqc.html, post-processing/ERR160167_1_val_1_fastqc.html, post-processing/ERR160190_1_val_1_fastqc.html, post-processing/ERR160179_1_val_1_fastqc.html, post-processing/ERR160129_1_val_1_fastqc.html, post-processing/ERR160132_1_val_1_fastqc.html, post-processing/ERR160148_1_val_1_fastqc.html, post-processing/ERR160193_1_val_1_fastqc.html, post-processing/ERR160144_1_val_1_fastqc.html, post-processing/ERR160184_1_val_1_fastqc.html, post-processing/ERR160121_1_val_1_fastqc.html, post-processing/ERR160141_1_val_1_fastqc.html, post-processing/ERR160186_1_val_1_fastqc.html, post-processing/ERR160157_1_val_1_fastqc.html, post-processing/ERR160123_1_val_1_fastqc.html, post-processing/ERR160187_1_val_1_fastqc.html, post-processing/ERR160127_1_val_1_fastqc.html, post-processing/ERR160143_1_val_1_fastqc.html, post-processing/ERR160158_1_val_1_fastqc.html, post-processing/ERR160185_1_val_1_fastqc.html, post-processing/ERR160176_1_val_1_fastqc.html, post-processing/ERR160191_1_val_1_fastqc.html, post-processing/ERR160189_1_val_1_fastqc.html, post-processing/ERR160183_1_val_1_fastqc.html, post-processing/ERR160173_2_val_2_fastqc.html, post-processing/ERR160135_2_val_2_fastqc.html, post-processing/ERR160180_2_val_2_fastqc.html, post-processing/ERR160174_2_val_2_fastqc.html, post-processing/ERR160140_2_val_2_fastqc.html, post-processing/ERR160125_2_val_2_fastqc.html, post-processing/ERR160150_2_val_2_fastqc.html, post-processing/ERR160195_2_val_2_fastqc.html, post-processing/ERR160161_2_val_2_fastqc.html, post-processing/ERR166338_2_val_2_fastqc.html, post-processing/ERR160182_2_val_2_fastqc.html, post-processing/ERR160130_2_val_2_fastqc.html, post-processing/ERR160181_2_val_2_fastqc.html, post-processing/ERR160196_2_val_2_fastqc.html, post-processing/ERR160175_2_val_2_fastqc.html, post-processing/ERR160128_2_val_2_fastqc.html, post-processing/ERR160162_2_val_2_fastqc.html, post-processing/ERR160178_2_val_2_fastqc.html, post-processing/ERR160137_2_val_2_fastqc.html, post-processing/ERR160152_2_val_2_fastqc.html, post-processing/ERR160177_2_val_2_fastqc.html, post-processing/ERR160154_2_val_2_fastqc.html, post-processing/ERR160134_2_val_2_fastqc.html, post-processing/ERR160131_2_val_2_fastqc.html, post-processing/ERR160164_2_val_2_fastqc.html, post-processing/ERR160159_2_val_2_fastqc.html, post-processing/ERR160126_2_val_2_fastqc.html, post-processing/ERR160188_2_val_2_fastqc.html, post-processing/ERR160147_2_val_2_fastqc.html, post-processing/ERR160172_2_val_2_fastqc.html, post-processing/ERR160165_2_val_2_fastqc.html, post-processing/ERR160168_2_val_2_fastqc.html, post-processing/ERR160171_2_val_2_fastqc.html, post-processing/ERR160166_2_val_2_fastqc.html, post-processing/ERR160136_2_val_2_fastqc.html, post-processing/ERR160145_2_val_2_fastqc.html, post-processing/ERR160163_2_val_2_fastqc.html, post-processing/ERR160142_2_val_2_fastqc.html, post-processing/ERR160170_2_val_2_fastqc.html, post-processing/ERR160194_2_val_2_fastqc.html, post-processing/ERR160156_2_val_2_fastqc.html, post-processing/ERR160139_2_val_2_fastqc.html, post-processing/ERR160146_2_val_2_fastqc.html, post-processing/ERR160160_2_val_2_fastqc.html, post-processing/ERR160133_2_val_2_fastqc.html, post-processing/ERR160151_2_val_2_fastqc.html, post-processing/ERR160192_2_val_2_fastqc.html, post-processing/ERR160138_2_val_2_fastqc.html, post-processing/ERR160122_2_val_2_fastqc.html, post-processing/ERR160155_2_val_2_fastqc.html, post-processing/ERR160169_2_val_2_fastqc.html, post-processing/ERR166339_2_val_2_fastqc.html, post-processing/ERR160124_2_val_2_fastqc.html, post-processing/ERR160153_2_val_2_fastqc.html, post-processing/ERR160149_2_val_2_fastqc.html, post-processing/ERR160167_2_val_2_fastqc.html, post-processing/ERR160190_2_val_2_fastqc.html, post-processing/ERR160179_2_val_2_fastqc.html, post-processing/ERR160129_2_val_2_fastqc.html, post-processing/ERR160132_2_val_2_fastqc.html, post-processing/ERR160148_2_val_2_fastqc.html, post-processing/ERR160193_2_val_2_fastqc.html, post-processing/ERR160144_2_val_2_fastqc.html, post-processing/ERR160184_2_val_2_fastqc.html, post-processing/ERR160121_2_val_2_fastqc.html, post-processing/ERR160141_2_val_2_fastqc.html, post-processing/ERR160186_2_val_2_fastqc.html, post-processing/ERR160157_2_val_2_fastqc.html, post-processing/ERR160123_2_val_2_fastqc.html, post-processing/ERR160187_2_val_2_fastqc.html, post-processing/ERR160127_2_val_2_fastqc.html, post-processing/ERR160143_2_val_2_fastqc.html, post-processing/ERR160158_2_val_2_fastqc.html, post-processing/ERR160185_2_val_2_fastqc.html, post-processing/ERR160176_2_val_2_fastqc.html, post-processing/ERR160191_2_val_2_fastqc.html, post-processing/ERR160189_2_val_2_fastqc.html, post-processing/ERR160183_2_val_2_fastqc.html, multiqc/multiqc_report.html, reference/genome-index/genome.ht2.done, data/sam-files/ERR160173.sam, data/sam-files/ERR160135.sam, data/sam-files/ERR160180.sam, data/sam-files/ERR160174.sam, data/sam-files/ERR160140.sam, data/sam-files/ERR160125.sam, data/sam-files/ERR160150.sam, data/sam-files/ERR160195.sam, data/sam-files/ERR160161.sam, data/sam-files/ERR166338.sam, data/sam-files/ERR160182.sam, data/sam-files/ERR160130.sam, data/sam-files/ERR160181.sam, data/sam-files/ERR160196.sam, data/sam-files/ERR160175.sam, data/sam-files/ERR160128.sam, data/sam-files/ERR160162.sam, data/sam-files/ERR160178.sam, data/sam-files/ERR160137.sam, data/sam-files/ERR160152.sam, data/sam-files/ERR160177.sam, data/sam-files/ERR160154.sam, data/sam-files/ERR160134.sam, data/sam-files/ERR160131.sam, data/sam-files/ERR160164.sam, data/sam-files/ERR160159.sam, data/sam-files/ERR160126.sam, data/sam-files/ERR160188.sam, data/sam-files/ERR160147.sam, data/sam-files/ERR160172.sam, data/sam-files/ERR160165.sam, data/sam-files/ERR160168.sam, data/sam-files/ERR160171.sam, data/sam-files/ERR160166.sam, data/sam-files/ERR160136.sam, data/sam-files/ERR160145.sam, data/sam-files/ERR160163.sam, data/sam-files/ERR160142.sam, data/sam-files/ERR160170.sam, data/sam-files/ERR160194.sam, data/sam-files/ERR160156.sam, data/sam-files/ERR160139.sam, data/sam-files/ERR160146.sam, data/sam-files/ERR160160.sam, data/sam-files/ERR160133.sam, data/sam-files/ERR160151.sam, data/sam-files/ERR160192.sam, data/sam-files/ERR160138.sam, data/sam-files/ERR160122.sam, data/sam-files/ERR160155.sam, data/sam-files/ERR160169.sam, data/sam-files/ERR166339.sam, data/sam-files/ERR160124.sam, data/sam-files/ERR160153.sam, data/sam-files/ERR160149.sam, data/sam-files/ERR160167.sam, data/sam-files/ERR160190.sam, data/sam-files/ERR160179.sam, data/sam-files/ERR160129.sam, data/sam-files/ERR160132.sam, data/sam-files/ERR160148.sam, data/sam-files/ERR160193.sam, data/sam-files/ERR160144.sam, data/sam-files/ERR160184.sam, data/sam-files/ERR160121.sam, data/sam-files/ERR160141.sam, data/sam-files/ERR160186.sam, data/sam-files/ERR160157.sam, data/sam-files/ERR160123.sam, data/sam-files/ERR160187.sam, data/sam-files/ERR160127.sam, data/sam-files/ERR160143.sam, data/sam-files/ERR160158.sam, data/sam-files/ERR160185.sam, data/sam-files/ERR160176.sam, data/sam-files/ERR160191.sam, data/sam-files/ERR160189.sam, data/sam-files/ERR160183.sam, data/bam-files/ERR160173.bam, data/bam-files/ERR160135.bam, data/bam-files/ERR160180.bam, data/bam-files/ERR160174.bam, data/bam-files/ERR160140.bam, data/bam-files/ERR160125.bam, data/bam-files/ERR160150.bam, data/bam-files/ERR160195.bam, data/bam-files/ERR160161.bam, data/bam-files/ERR166338.bam, data/bam-files/ERR160182.bam, data/bam-files/ERR160130.bam, data/bam-files/ERR160181.bam, data/bam-files/ERR160196.bam, data/bam-files/ERR160175.bam, data/bam-files/ERR160128.bam, data/bam-files/ERR160162.bam, data/bam-files/ERR160178.bam, data/bam-files/ERR160137.bam, data/bam-files/ERR160152.bam, data/bam-files/ERR160177.bam, data/bam-files/ERR160154.bam, data/bam-files/ERR160134.bam, data/bam-files/ERR160131.bam, data/bam-files/ERR160164.bam, data/bam-files/ERR160159.bam, data/bam-files/ERR160126.bam, data/bam-files/ERR160188.bam, data/bam-files/ERR160147.bam, data/bam-files/ERR160172.bam, data/bam-files/ERR160165.bam, data/bam-files/ERR160168.bam, data/bam-files/ERR160171.bam, data/bam-files/ERR160166.bam, data/bam-files/ERR160136.bam, data/bam-files/ERR160145.bam, data/bam-files/ERR160163.bam, data/bam-files/ERR160142.bam, data/bam-files/ERR160170.bam, data/bam-files/ERR160194.bam, data/bam-files/ERR160156.bam, data/bam-files/ERR160139.bam, data/bam-files/ERR160146.bam, data/bam-files/ERR160160.bam, data/bam-files/ERR160133.bam, data/bam-files/ERR160151.bam, data/bam-files/ERR160192.bam, data/bam-files/ERR160138.bam, data/bam-files/ERR160122.bam, data/bam-files/ERR160155.bam, data/bam-files/ERR160169.bam, data/bam-files/ERR166339.bam, data/bam-files/ERR160124.bam, data/bam-files/ERR160153.bam, data/bam-files/ERR160149.bam, data/bam-files/ERR160167.bam, data/bam-files/ERR160190.bam, data/bam-files/ERR160179.bam, data/bam-files/ERR160129.bam, data/bam-files/ERR160132.bam, data/bam-files/ERR160148.bam, data/bam-files/ERR160193.bam, data/bam-files/ERR160144.bam, data/bam-files/ERR160184.bam, data/bam-files/ERR160121.bam, data/bam-files/ERR160141.bam, data/bam-files/ERR160186.bam, data/bam-files/ERR160157.bam, data/bam-files/ERR160123.bam, data/bam-files/ERR160187.bam, data/bam-files/ERR160127.bam, data/bam-files/ERR160143.bam, data/bam-files/ERR160158.bam, data/bam-files/ERR160185.bam, data/bam-files/ERR160176.bam, data/bam-files/ERR160191.bam, data/bam-files/ERR160189.bam, data/bam-files/ERR160183.bam, results/final_counts.txt
+    jobid: 0
+    reason: Input files updated by another job: data/bam-files/ERR160131.bam, data/bam-files/ERR160124.bam, data/bam-files/ERR160184.bam, data/bam-files/ERR160146.bam, data/bam-files/ERR160154.bam, data/bam-files/ERR160157.bam, data/bam-files/ERR160170.bam, multiqc/multiqc_report.html, data/bam-files/ERR160150.bam, data/bam-files/ERR160122.bam, data/sam-files/ERR160150.sam, data/bam-files/ERR160168.bam, data/bam-files/ERR160180.bam, data/sam-files/ERR160159.sam, data/bam-files/ERR160149.bam, data/bam-files/ERR160185.bam, data/bam-files/ERR160140.bam, data/sam-files/ERR160131.sam, data/sam-files/ERR160170.sam, data/bam-files/ERR160159.bam, data/sam-files/ERR160174.sam, data/bam-files/ERR160179.bam, data/bam-files/ERR160174.bam, data/bam-files/ERR160130.bam, data/bam-files/ERR160171.bam, data/bam-files/ERR160177.bam, data/bam-files/ERR160137.bam, data/bam-files/ERR160144.bam
+    resources: tmpdir=/tmp
+
+[Fri Sep 26 17:44:19 2025]
+Finished jobid: 0 (Rule: all)
+29 of 29 steps (100%) done
+Complete log(s): /projects/inesmelo_research/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/log/2025-09-26T154620.250297.snakemake.log
