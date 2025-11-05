@@ -26,17 +26,19 @@ rule all:
     f"reference/genome.fa",
     f"reference/genome.gtf",
 # ---Quality-Control---
-    # FastQC Check 
-    expand("pre-processing/{sample}_1_fastqc.html", sample=SAMPLES),
-    expand("pre-processing/{sample}_2_fastqc.html", sample=SAMPLES),
+    # FastQC Check and MultiQC Report 
+    expand("pre-processing/{sample}_1_fastqc.html",sample=SAMPLES),
+    expand("pre-processing/{sample}_2_fastqc.html",sample=SAMPLES),
+    "multiqc/pre_processing_report.html",
+
     # Trim Reads 
     expand("data/trimmed_reads/{sample}_1_val_1.fq",sample=SAMPLES),
     expand("data/trimmed_reads/{sample}_2_val_2.fq",sample=SAMPLES),
+
     # FastQC Check 
     expand("post-processing/{sample}_1_val_1_fastqc.html", sample=SAMPLES),
     expand("post-processing/{sample}_2_val_2_fastqc.html", sample=SAMPLES),
-    # MultiQC report 
-    "multiqc/multiqc_report.html",
+    "multiqc/post_processing_report.html",
 # ---Read Alignment (PhaseI)---
     # Build Reference Genome
     "reference/genome-index/genome.ht2.done",
@@ -84,10 +86,22 @@ rule fastqc_preprocessing:
     r2_report = "pre-processing/{sample}_2_fastqc.html"
   conda:
     "envs/fastqc-env.yaml"
+  threads:
+    10
   shell:
     """
-    fastqc {input.r1} {input.r2} -o pre-processing
+    fastqc {input.r1} {input.r2} --threads {threads} -o pre-processing && rm pre-processing/*.zip
     """
+rule multiqc_pre_processing:
+    input:
+      r1 = expand("pre-processing/{sample}_1_fastqc.html",sample=SAMPLES),
+      r2 = expand("pre-processing/{sample}_2_fastqc.html",sample=SAMPLES)
+    output:
+      "multiqc/pre_processing_report.html"
+    conda:
+      "envs/multiqc-env.yaml"
+    shell:
+      "multiqc pre-processing -o {output}"
 
 rule trim_galore:
   input:
@@ -95,17 +109,34 @@ rule trim_galore:
     r2 = "data/raw-reads/{sample}_2.fastq"
   output:
     "data/trimmed_reads/{sample}_1_val_1.fq",
-    "data/trimmed_reads/{sample}_2_val_2.fq"
+    "data/trimmed_reads/{sample}_2_val_2.fq",
+    "post-processing/{sample}_1.fastq_trimming_report.txt",
+    "post-processing/{sample}_2.fastq_trimming_report.txt"
   conda:
     "envs/trim-env.yaml"
+  threads:
+    10
   params:
     quality = trim_galore_params['quality'],
     length = trim_galore_params['length'],
     clip_R1 = trim_galore_params['clip_R1'],
     clip_R2 = trim_galore_params['clip_R2']
   shell:
-    "trim_galore --phred33 --quality {params.quality} --illumina --length {params.length} "
-    "--paired --output_dir data/trimmed_reads/ --clip_R1 {params.clip_R1} --clip_R2 {params.clip_R2} {input.r1} {input.r2}"
+    """
+    trim_galore \
+        --phred33 \
+        --cores {threads} \
+        --quality 20 \
+        --illumina \
+        --length 25 \
+        --paired \
+        --output_dir data/trimmed_reads/ \
+        --clip_R1 5 \
+        --clip_R2 5 \
+        {input.r1} \
+        {input.r2} && \
+    mv data/trimmed_reads/*.txt post-processing/
+    """
 
 rule fastqc_postprocessing:
   input:
@@ -116,21 +147,26 @@ rule fastqc_postprocessing:
     r2_report = "post-processing/{sample}_2_val_2_fastqc.html"
   conda:
     "envs/fastqc-env.yaml"
+  threads:
+    10
   shell:
-    "fastqc {input.r1} {input.r2} -o post-processing"
+    """
+    fastqc {input.r1} {input.r2} -o post-processing --threads {threads} && \
+    rm post-processing/*.zip
+    """
 
-rule multiqc_trim:
+rule multiqc_post_processing:
   input:
-    expand("pre-processing/{sample}_1_fastqc.html", sample=SAMPLES) +
-    expand("pre-processing/{sample}_2_fastqc.html", sample=SAMPLES) +
-    expand("post-processing/{sample}_1_val_1_fastqc.html", sample=SAMPLES) +
-    expand("post-processing/{sample}_2_val_2_fastqc.html", sample=SAMPLES)
+    in1 = expand("post-processing/{sample}_1_val_1_fastqc.html", sample=SAMPLES),
+    in2 = expand("post-processing/{sample}_2_val_2_fastqc.html", sample=SAMPLES),
+    in3 = expand("post-processing/{sample}_1.fastq_trimming_report.txt",sample=SAMPLES),
+    in4 = expand("post-processing/{sample}_2.fastq_trimming_report.txt",sample=SAMPLES)
   output:
-    "multiqc/multiqc_report.html"
+    "multiqc/post_processing_report.html"
   conda:
     "envs/multiqc-env.yaml"
   shell:
-    "multiqc pre-processing post-processing -o multiqc"
+    "multiqc post-processing -o {output}"
 
 rule hisat_build_index:
   input:
@@ -142,9 +178,7 @@ rule hisat_build_index:
   shell:
     """
     mkdir -p reference/genome-index
-    #gunzip -c {input.genome} > reference/genome.fa
-    hisat2-build reference/genome.fa reference/genome-index/genome
-    touch {output}
+    hisat2-build reference/genome.fa reference/genome-index/genome && touch {output}
     """
 
 rule hisat_map_reads:
@@ -169,8 +203,7 @@ rule convert_to_bam:
     "envs/samtools-env.yaml"
   shell:
     """
-    samtools view -bS {input} > {output.bam}
-    samtools sort {output.bam} -o {output.sorted_bam}
+    samtools view -bS {input} > {output.bam} && samtools sort {output.bam} -o {output.sorted_bam} && rm data/bam-files/*.bam
     """
 
 rule get_counts_matrix:

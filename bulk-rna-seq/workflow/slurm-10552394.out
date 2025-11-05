@@ -1,0 +1,775 @@
+======================================================
+Start Time   : Tue Oct 14 09:40:47 AM EDT 2025
+Submit Dir   : /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow
+Host Name(s) : str-c206
+Job ID/Name  : 10552394 / rna-exploration
+======================================================
+
+Assuming unrestricted shared filesystem usage.
+host: str-c206.charlotte.edu
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+convert_to_bam                78
+fastqc_postprocessing         78
+fastqc_preprocessing          78
+hisat_map_reads               78
+multiqc_post_processing        1
+multiqc_pre_processing         1
+trim_galore                   78
+total                        393
+
+Select jobs to execute...
+Execute 10 jobs...
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160121_1.fastq, data/raw-reads/ERR160121_2.fastq
+    output: pre-processing/ERR160121_1_fastqc.txt, pre-processing/ERR160121_2_fastqc.txt
+    jobid: 60
+    reason: Missing output files: pre-processing/ERR160121_2_fastqc.txt, pre-processing/ERR160121_1_fastqc.txt
+    wildcards: sample=ERR160121
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160130_1.fastq, data/raw-reads/ERR160130_2.fastq
+    output: pre-processing/ERR160130_1_fastqc.txt, pre-processing/ERR160130_2_fastqc.txt
+    jobid: 4
+    reason: Missing output files: pre-processing/ERR160130_1_fastqc.txt, pre-processing/ERR160130_2_fastqc.txt
+    wildcards: sample=ERR160130
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160159_1.fastq, data/raw-reads/ERR160159_2.fastq
+    output: pre-processing/ERR160159_1_fastqc.txt, pre-processing/ERR160159_2_fastqc.txt
+    jobid: 31
+    reason: Missing output files: pre-processing/ERR160159_1_fastqc.txt, pre-processing/ERR160159_2_fastqc.txt
+    wildcards: sample=ERR160159
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160161_1.fastq, data/raw-reads/ERR160161_2.fastq
+    output: pre-processing/ERR160161_1_fastqc.txt, pre-processing/ERR160161_2_fastqc.txt
+    jobid: 80
+    reason: Missing output files: pre-processing/ERR160161_1_fastqc.txt, pre-processing/ERR160161_2_fastqc.txt
+    wildcards: sample=ERR160161
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160170_1.fastq, data/raw-reads/ERR160170_2.fastq
+    output: pre-processing/ERR160170_1_fastqc.txt, pre-processing/ERR160170_2_fastqc.txt
+    jobid: 57
+    reason: Missing output files: pre-processing/ERR160170_2_fastqc.txt, pre-processing/ERR160170_1_fastqc.txt
+    wildcards: sample=ERR160170
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160187_1.fastq, data/raw-reads/ERR160187_2.fastq
+    output: pre-processing/ERR160187_1_fastqc.txt, pre-processing/ERR160187_2_fastqc.txt
+    jobid: 33
+    reason: Missing output files: pre-processing/ERR160187_1_fastqc.txt, pre-processing/ERR160187_2_fastqc.txt
+    wildcards: sample=ERR160187
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160138_1.fastq, data/raw-reads/ERR160138_2.fastq
+    output: pre-processing/ERR160138_1_fastqc.txt, pre-processing/ERR160138_2_fastqc.txt
+    jobid: 3
+    reason: Missing output files: pre-processing/ERR160138_2_fastqc.txt, pre-processing/ERR160138_1_fastqc.txt
+    wildcards: sample=ERR160138
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR166338_1.fastq, data/raw-reads/ERR166338_2.fastq
+    output: pre-processing/ERR166338_1_fastqc.txt, pre-processing/ERR166338_2_fastqc.txt
+    jobid: 59
+    reason: Missing output files: pre-processing/ERR166338_1_fastqc.txt, pre-processing/ERR166338_2_fastqc.txt
+    wildcards: sample=ERR166338
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160171_1.fastq, data/raw-reads/ERR160171_2.fastq
+    output: pre-processing/ERR160171_1_fastqc.txt, pre-processing/ERR160171_2_fastqc.txt
+    jobid: 61
+    reason: Missing output files: pre-processing/ERR160171_1_fastqc.txt, pre-processing/ERR160171_2_fastqc.txt
+    wildcards: sample=ERR160171
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Tue Oct 14 09:40:52 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160122_1.fastq, data/raw-reads/ERR160122_2.fastq
+    output: pre-processing/ERR160122_1_fastqc.txt, pre-processing/ERR160122_2_fastqc.txt
+    jobid: 32
+    reason: Missing output files: pre-processing/ERR160122_2_fastqc.txt, pre-processing/ERR160122_1_fastqc.txt
+    wildcards: sample=ERR160122
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+Select jobs to execute...
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+nullnull
+
+nullnullnull
+
+
+null
+null
+Started analysis of ERR160161_1.fastq
+Started analysis of ERR160171_1.fastq
+Started analysis of ERR160187_1.fastq
+Started analysis of ERR160159_1.fastq
+Started analysis of ERR160170_1.fastq
+null
+Started analysis of ERR166338_1.fastq
+Started analysis of ERR160121_1.fastqStarted analysis of ERR160122_1.fastq
+
+null
+Started analysis of ERR160130_1.fastq
+Started analysis of ERR160138_1.fastq
+Approx 5% complete for ERR160161_1.fastq
+Approx 5% complete for ERR160187_1.fastq
+Approx 5% complete for ERR160171_1.fastq
+Approx 5% complete for ERR160159_1.fastq
+Approx 5% complete for ERR160122_1.fastq
+Approx 5% complete for ERR160170_1.fastq
+Approx 10% complete for ERR160161_1.fastq
+Approx 10% complete for ERR160187_1.fastq
+Approx 5% complete for ERR160138_1.fastq
+Approx 10% complete for ERR160171_1.fastq
+Approx 5% complete for ERR160130_1.fastq
+Approx 5% complete for ERR160121_1.fastq
+Approx 10% complete for ERR160159_1.fastq
+Approx 15% complete for ERR160161_1.fastq
+Approx 15% complete for ERR160187_1.fastq
+Approx 10% complete for ERR160122_1.fastq
+Approx 10% complete for ERR160170_1.fastq
+Approx 20% complete for ERR160161_1.fastq
+Approx 15% complete for ERR160171_1.fastq
+Approx 15% complete for ERR160159_1.fastq
+Approx 20% complete for ERR160187_1.fastq
+Approx 10% complete for ERR160138_1.fastq
+Approx 15% complete for ERR160122_1.fastq
+Approx 25% complete for ERR160161_1.fastq
+Approx 15% complete for ERR160170_1.fastq
+Approx 10% complete for ERR160130_1.fastq
+Approx 5% complete for ERR166338_1.fastq
+Approx 25% complete for ERR160187_1.fastq
+Approx 20% complete for ERR160171_1.fastq
+Approx 10% complete for ERR160121_1.fastq
+Approx 20% complete for ERR160159_1.fastq
+Approx 30% complete for ERR160161_1.fastq
+Approx 30% complete for ERR160187_1.fastq
+Approx 20% complete for ERR160122_1.fastq
+Approx 20% complete for ERR160170_1.fastq
+Approx 15% complete for ERR160138_1.fastq
+Approx 25% complete for ERR160171_1.fastq
+Approx 35% complete for ERR160161_1.fastq
+Approx 25% complete for ERR160159_1.fastq
+Approx 35% complete for ERR160187_1.fastq
+Approx 15% complete for ERR160130_1.fastq
+Approx 40% complete for ERR160161_1.fastq
+Approx 25% complete for ERR160122_1.fastq
+Approx 15% complete for ERR160121_1.fastq
+Approx 30% complete for ERR160171_1.fastq
+Approx 25% complete for ERR160170_1.fastq
+Approx 30% complete for ERR160159_1.fastq
+Approx 40% complete for ERR160187_1.fastq
+Approx 45% complete for ERR160161_1.fastq
+Approx 20% complete for ERR160138_1.fastq
+Approx 45% complete for ERR160187_1.fastq
+Approx 35% complete for ERR160171_1.fastq
+Approx 30% complete for ERR160122_1.fastq
+Approx 35% complete for ERR160159_1.fastq
+Approx 30% complete for ERR160170_1.fastq
+Approx 50% complete for ERR160161_1.fastq
+Approx 20% complete for ERR160130_1.fastq
+Approx 10% complete for ERR166338_1.fastq
+Approx 50% complete for ERR160187_1.fastq
+Approx 20% complete for ERR160121_1.fastq
+Approx 55% complete for ERR160161_1.fastq
+Approx 40% complete for ERR160171_1.fastq
+Approx 25% complete for ERR160138_1.fastq
+Approx 40% complete for ERR160159_1.fastq
+Approx 35% complete for ERR160122_1.fastq
+Approx 35% complete for ERR160170_1.fastq
+Approx 55% complete for ERR160187_1.fastq
+Approx 60% complete for ERR160161_1.fastq
+Approx 45% complete for ERR160171_1.fastq
+Approx 45% complete for ERR160159_1.fastq
+Approx 60% complete for ERR160187_1.fastq
+Approx 65% complete for ERR160161_1.fastq
+Approx 40% complete for ERR160122_1.fastq
+Approx 25% complete for ERR160130_1.fastq
+Approx 40% complete for ERR160170_1.fastq
+Approx 30% complete for ERR160138_1.fastq
+Approx 25% complete for ERR160121_1.fastq
+Approx 50% complete for ERR160171_1.fastq
+Approx 65% complete for ERR160187_1.fastq
+Approx 70% complete for ERR160161_1.fastq
+Approx 50% complete for ERR160159_1.fastq
+Approx 45% complete for ERR160122_1.fastq
+Approx 70% complete for ERR160187_1.fastq
+Approx 45% complete for ERR160170_1.fastq
+Approx 75% complete for ERR160161_1.fastq
+Approx 55% complete for ERR160171_1.fastq
+Approx 35% complete for ERR160138_1.fastq
+Approx 55% complete for ERR160159_1.fastq
+Approx 30% complete for ERR160130_1.fastq
+Approx 15% complete for ERR166338_1.fastq
+Approx 75% complete for ERR160187_1.fastq
+Approx 80% complete for ERR160161_1.fastq
+Approx 30% complete for ERR160121_1.fastq
+Approx 50% complete for ERR160122_1.fastq
+Approx 60% complete for ERR160171_1.fastq
+Approx 50% complete for ERR160170_1.fastq
+Approx 85% complete for ERR160161_1.fastq
+Approx 60% complete for ERR160159_1.fastq
+Approx 80% complete for ERR160187_1.fastq
+Approx 40% complete for ERR160138_1.fastq
+Approx 55% complete for ERR160122_1.fastq
+Approx 65% complete for ERR160171_1.fastq
+Approx 90% complete for ERR160161_1.fastq
+Approx 85% complete for ERR160187_1.fastq
+Approx 35% complete for ERR160130_1.fastq
+Approx 55% complete for ERR160170_1.fastq
+Approx 65% complete for ERR160159_1.fastq
+Approx 35% complete for ERR160121_1.fastq
+Approx 95% complete for ERR160161_1.fastq
+Approx 90% complete for ERR160187_1.fastq
+Approx 70% complete for ERR160171_1.fastq
+Approx 60% complete for ERR160122_1.fastq
+Approx 45% complete for ERR160138_1.fastq
+Approx 70% complete for ERR160159_1.fastq
+Approx 60% complete for ERR160170_1.fastq
+Analysis complete for ERR160161_1.fastq
+Approx 95% complete for ERR160187_1.fastq
+Approx 75% complete for ERR160171_1.fastq
+Approx 40% complete for ERR160130_1.fastq
+Approx 20% complete for ERR166338_1.fastq
+Approx 65% complete for ERR160122_1.fastq
+Approx 75% complete for ERR160159_1.fastq
+Analysis complete for ERR160187_1.fastq
+Approx 40% complete for ERR160121_1.fastq
+Approx 65% complete for ERR160170_1.fastq
+Started analysis of ERR160161_2.fastq
+Started analysis of ERR160187_2.fastq
+Approx 50% complete for ERR160138_1.fastq
+Approx 80% complete for ERR160171_1.fastq
+Approx 80% complete for ERR160159_1.fastq
+Approx 70% complete for ERR160122_1.fastq
+Approx 5% complete for ERR160161_2.fastq
+Approx 5% complete for ERR160187_2.fastq
+Approx 70% complete for ERR160170_1.fastq
+Approx 45% complete for ERR160130_1.fastq
+Approx 85% complete for ERR160171_1.fastq
+Approx 10% complete for ERR160161_2.fastq
+Approx 10% complete for ERR160187_2.fastq
+Approx 45% complete for ERR160121_1.fastq
+Approx 55% complete for ERR160138_1.fastq
+Approx 85% complete for ERR160159_1.fastq
+Approx 75% complete for ERR160122_1.fastq
+Approx 90% complete for ERR160171_1.fastq
+Approx 15% complete for ERR160161_2.fastq
+Approx 75% complete for ERR160170_1.fastq
+Approx 15% complete for ERR160187_2.fastq
+Approx 90% complete for ERR160159_1.fastq
+Approx 20% complete for ERR160161_2.fastq
+Approx 50% complete for ERR160130_1.fastq
+Approx 80% complete for ERR160122_1.fastq
+Approx 20% complete for ERR160187_2.fastq
+Approx 60% complete for ERR160138_1.fastq
+Approx 95% complete for ERR160171_1.fastq
+Approx 25% complete for ERR166338_1.fastq
+Approx 80% complete for ERR160170_1.fastq
+Approx 50% complete for ERR160121_1.fastq
+Approx 95% complete for ERR160159_1.fastq
+Approx 25% complete for ERR160161_2.fastq
+Approx 25% complete for ERR160187_2.fastq
+Approx 85% complete for ERR160122_1.fastq
+Analysis complete for ERR160171_1.fastq
+Approx 30% complete for ERR160161_2.fastq
+Started analysis of ERR160171_2.fastq
+Approx 85% complete for ERR160170_1.fastq
+Approx 65% complete for ERR160138_1.fastq
+Approx 30% complete for ERR160187_2.fastq
+Analysis complete for ERR160159_1.fastq
+Approx 55% complete for ERR160130_1.fastq
+Started analysis of ERR160159_2.fastq
+Approx 35% complete for ERR160161_2.fastq
+Approx 90% complete for ERR160122_1.fastq
+Approx 55% complete for ERR160121_1.fastq
+Approx 35% complete for ERR160187_2.fastq
+Approx 5% complete for ERR160171_2.fastq
+Approx 90% complete for ERR160170_1.fastq
+Approx 40% complete for ERR160161_2.fastq
+Approx 5% complete for ERR160159_2.fastq
+Approx 70% complete for ERR160138_1.fastq
+Approx 40% complete for ERR160187_2.fastq
+Approx 95% complete for ERR160122_1.fastq
+Approx 45% complete for ERR160161_2.fastq
+Approx 10% complete for ERR160171_2.fastq
+Approx 60% complete for ERR160130_1.fastq
+Approx 30% complete for ERR166338_1.fastq
+Approx 95% complete for ERR160170_1.fastq
+Approx 45% complete for ERR160187_2.fastq
+Approx 10% complete for ERR160159_2.fastq
+Approx 60% complete for ERR160121_1.fastq
+Approx 50% complete for ERR160161_2.fastq
+Analysis complete for ERR160122_1.fastq
+Approx 15% complete for ERR160171_2.fastq
+Approx 75% complete for ERR160138_1.fastq
+Approx 50% complete for ERR160187_2.fastq
+Started analysis of ERR160122_2.fastq
+Approx 55% complete for ERR160161_2.fastq
+Approx 15% complete for ERR160159_2.fastq
+Analysis complete for ERR160170_1.fastq
+Approx 65% complete for ERR160130_1.fastq
+Started analysis of ERR160170_2.fastq
+Approx 55% complete for ERR160187_2.fastq
+Approx 20% complete for ERR160171_2.fastq
+Approx 60% complete for ERR160161_2.fastq
+Approx 65% complete for ERR160121_1.fastq
+Approx 5% complete for ERR160122_2.fastq
+Approx 80% complete for ERR160138_1.fastq
+Approx 20% complete for ERR160159_2.fastq
+Approx 60% complete for ERR160187_2.fastq
+Approx 65% complete for ERR160161_2.fastq
+Approx 25% complete for ERR160171_2.fastq
+Approx 5% complete for ERR160170_2.fastq
+Approx 65% complete for ERR160187_2.fastq
+Approx 70% complete for ERR160161_2.fastq
+Approx 25% complete for ERR160159_2.fastq
+Approx 70% complete for ERR160130_1.fastq
+Approx 10% complete for ERR160122_2.fastq
+Approx 35% complete for ERR166338_1.fastq
+Approx 85% complete for ERR160138_1.fastq
+Approx 30% complete for ERR160171_2.fastq
+Approx 70% complete for ERR160187_2.fastq
+Approx 75% complete for ERR160161_2.fastq
+Approx 70% complete for ERR160121_1.fastq
+Approx 10% complete for ERR160170_2.fastq
+Approx 30% complete for ERR160159_2.fastq
+Approx 15% complete for ERR160122_2.fastq
+Approx 75% complete for ERR160187_2.fastq
+Approx 80% complete for ERR160161_2.fastq
+Approx 35% complete for ERR160171_2.fastq
+Approx 75% complete for ERR160130_1.fastq
+Approx 90% complete for ERR160138_1.fastq
+Approx 15% complete for ERR160170_2.fastq
+Approx 35% complete for ERR160159_2.fastq
+Approx 85% complete for ERR160161_2.fastq
+Approx 80% complete for ERR160187_2.fastq
+Approx 20% complete for ERR160122_2.fastq
+Approx 40% complete for ERR160171_2.fastq
+Approx 75% complete for ERR160121_1.fastq
+Approx 90% complete for ERR160161_2.fastq
+Approx 85% complete for ERR160187_2.fastq
+Approx 40% complete for ERR160159_2.fastq
+Approx 20% complete for ERR160170_2.fastq
+Approx 95% complete for ERR160138_1.fastq
+Approx 45% complete for ERR160171_2.fastq
+Approx 95% complete for ERR160161_2.fastq
+Approx 80% complete for ERR160130_1.fastq
+Approx 25% complete for ERR160122_2.fastq
+Approx 90% complete for ERR160187_2.fastq
+Approx 45% complete for ERR160159_2.fastq
+Approx 40% complete for ERR166338_1.fastq
+Analysis complete for ERR160161_2.fastq
+Approx 25% complete for ERR160170_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160161_1_fastqc.txt (missing locally)
+pre-processing/ERR160161_2_fastqc.txt (missing locally)
+Approx 80% complete for ERR160121_1.fastq
+Approx 95% complete for ERR160187_2.fastq
+Approx 50% complete for ERR160171_2.fastq
+Approx 30% complete for ERR160122_2.fastq
+Analysis complete for ERR160138_1.fastq
+Approx 50% complete for ERR160159_2.fastq
+Analysis complete for ERR160187_2.fastq
+Started analysis of ERR160138_2.fastq
+Approx 85% complete for ERR160130_1.fastq
+Approx 30% complete for ERR160170_2.fastq
+Approx 55% complete for ERR160171_2.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 80  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160161_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160161_2_fastqc.txt (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160187_1_fastqc.txt (missing locally)
+pre-processing/ERR160187_2_fastqc.txt (missing locally)
+Approx 35% complete for ERR160122_2.fastq
+Approx 55% complete for ERR160159_2.fastq
+Approx 85% complete for ERR160121_1.fastq
+Approx 60% complete for ERR160171_2.fastq
+Approx 35% complete for ERR160170_2.fastq
+Approx 5% complete for ERR160138_2.fastq
+Approx 60% complete for ERR160159_2.fastq
+Approx 40% complete for ERR160122_2.fastq
+Approx 90% complete for ERR160130_1.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 33  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160187_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160187_2_fastqc.txt (missing locally, parent dir contents: )
+Approx 65% complete for ERR160171_2.fastq
+Approx 45% complete for ERR166338_1.fastq
+Approx 40% complete for ERR160170_2.fastq
+Approx 65% complete for ERR160159_2.fastq
+Approx 90% complete for ERR160121_1.fastq
+Approx 45% complete for ERR160122_2.fastq
+Approx 10% complete for ERR160138_2.fastq
+Approx 70% complete for ERR160171_2.fastq
+Approx 95% complete for ERR160130_1.fastq
+Approx 45% complete for ERR160170_2.fastq
+Approx 70% complete for ERR160159_2.fastq
+Approx 75% complete for ERR160171_2.fastq
+Approx 50% complete for ERR160122_2.fastq
+Approx 15% complete for ERR160138_2.fastq
+Approx 95% complete for ERR160121_1.fastq
+Approx 75% complete for ERR160159_2.fastq
+Approx 50% complete for ERR160170_2.fastq
+Approx 80% complete for ERR160171_2.fastq
+Approx 55% complete for ERR160122_2.fastq
+Analysis complete for ERR160130_1.fastq
+Started analysis of ERR160130_2.fastq
+Approx 80% complete for ERR160159_2.fastq
+Approx 50% complete for ERR166338_1.fastq
+Approx 55% complete for ERR160170_2.fastq
+Approx 20% complete for ERR160138_2.fastq
+Approx 85% complete for ERR160171_2.fastq
+Analysis complete for ERR160121_1.fastq
+Approx 60% complete for ERR160122_2.fastq
+Started analysis of ERR160121_2.fastq
+Approx 85% complete for ERR160159_2.fastq
+Approx 90% complete for ERR160171_2.fastq
+Approx 60% complete for ERR160170_2.fastq
+Approx 5% complete for ERR160130_2.fastq
+Approx 25% complete for ERR160138_2.fastq
+Approx 65% complete for ERR160122_2.fastq
+Approx 90% complete for ERR160159_2.fastq
+Approx 95% complete for ERR160171_2.fastq
+Approx 65% complete for ERR160170_2.fastq
+Approx 5% complete for ERR160121_2.fastq
+Approx 95% complete for ERR160159_2.fastq
+Approx 70% complete for ERR160122_2.fastq
+Analysis complete for ERR160171_2.fastq
+Approx 30% complete for ERR160138_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160171_1_fastqc.txt (missing locally)
+pre-processing/ERR160171_2_fastqc.txt (missing locally)
+Approx 10% complete for ERR160130_2.fastq
+Approx 70% complete for ERR160170_2.fastq
+Approx 55% complete for ERR166338_1.fastq
+Analysis complete for ERR160159_2.fastq
+Approx 75% complete for ERR160122_2.fastq
+Approx 10% complete for ERR160121_2.fastq
+Approx 35% complete for ERR160138_2.fastq
+Approx 75% complete for ERR160170_2.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 61  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160171_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160171_2_fastqc.txt (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160159_1_fastqc.txt (missing locally)
+pre-processing/ERR160159_2_fastqc.txt (missing locally)
+Approx 80% complete for ERR160122_2.fastq
+Approx 15% complete for ERR160130_2.fastq
+Approx 80% complete for ERR160170_2.fastq
+Approx 40% complete for ERR160138_2.fastq
+Approx 85% complete for ERR160122_2.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 31  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160159_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160159_2_fastqc.txt (missing locally, parent dir contents: )
+Approx 15% complete for ERR160121_2.fastq
+Approx 85% complete for ERR160170_2.fastq
+Approx 20% complete for ERR160130_2.fastq
+Approx 60% complete for ERR166338_1.fastq
+Approx 90% complete for ERR160122_2.fastq
+Approx 45% complete for ERR160138_2.fastq
+Approx 90% complete for ERR160170_2.fastq
+Approx 20% complete for ERR160121_2.fastq
+Approx 95% complete for ERR160122_2.fastq
+Approx 25% complete for ERR160130_2.fastq
+Approx 50% complete for ERR160138_2.fastq
+Approx 95% complete for ERR160170_2.fastq
+Analysis complete for ERR160122_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160122_1_fastqc.txt (missing locally)
+pre-processing/ERR160122_2_fastqc.txt (missing locally)
+Approx 25% complete for ERR160121_2.fastq
+Analysis complete for ERR160170_2.fastq
+Approx 55% complete for ERR160138_2.fastq
+Approx 30% complete for ERR160130_2.fastq
+Approx 65% complete for ERR166338_1.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 32  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160122_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160122_2_fastqc.txt (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160170_1_fastqc.txt (missing locally)
+pre-processing/ERR160170_2_fastqc.txt (missing locally)
+Approx 30% complete for ERR160121_2.fastq
+Approx 60% complete for ERR160138_2.fastq
+Approx 35% complete for ERR160130_2.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 57  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160170_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160170_2_fastqc.txt (missing locally, parent dir contents: )
+Approx 65% complete for ERR160138_2.fastq
+Approx 35% complete for ERR160121_2.fastq
+Approx 40% complete for ERR160130_2.fastq
+Approx 70% complete for ERR166338_1.fastq
+Approx 70% complete for ERR160138_2.fastq
+Approx 40% complete for ERR160121_2.fastq
+Approx 45% complete for ERR160130_2.fastq
+Approx 75% complete for ERR160138_2.fastq
+Approx 45% complete for ERR160121_2.fastq
+Approx 75% complete for ERR166338_1.fastq
+Approx 50% complete for ERR160130_2.fastq
+Approx 80% complete for ERR160138_2.fastq
+Approx 50% complete for ERR160121_2.fastq
+Approx 85% complete for ERR160138_2.fastq
+Approx 55% complete for ERR160130_2.fastq
+Approx 90% complete for ERR160138_2.fastq
+Approx 55% complete for ERR160121_2.fastq
+Approx 80% complete for ERR166338_1.fastq
+Approx 60% complete for ERR160130_2.fastq
+Approx 95% complete for ERR160138_2.fastq
+Approx 60% complete for ERR160121_2.fastq
+Approx 65% complete for ERR160130_2.fastq
+Analysis complete for ERR160138_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160138_1_fastqc.txt (missing locally)
+pre-processing/ERR160138_2_fastqc.txt (missing locally)
+Approx 65% complete for ERR160121_2.fastq
+Approx 85% complete for ERR166338_1.fastq
+Approx 70% complete for ERR160130_2.fastq
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160138_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160138_2_fastqc.txt (missing locally, parent dir contents: )
+Approx 70% complete for ERR160121_2.fastq
+Approx 75% complete for ERR160130_2.fastq
+Approx 90% complete for ERR166338_1.fastq
+Approx 75% complete for ERR160121_2.fastq
+Approx 80% complete for ERR160130_2.fastq
+Approx 80% complete for ERR160121_2.fastq
+Approx 85% complete for ERR160130_2.fastq
+Approx 95% complete for ERR166338_1.fastq
+Approx 85% complete for ERR160121_2.fastq
+Approx 90% complete for ERR160130_2.fastq
+Approx 95% complete for ERR160130_2.fastq
+Approx 90% complete for ERR160121_2.fastq
+Analysis complete for ERR166338_1.fastq
+Analysis complete for ERR160130_2.fastq
+Approx 95% complete for ERR160121_2.fastq
+Started analysis of ERR166338_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160130_1_fastqc.txt (missing locally)
+pre-processing/ERR160130_2_fastqc.txt (missing locally)
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 4  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160130_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160130_2_fastqc.txt (missing locally, parent dir contents: )
+Analysis complete for ERR160121_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR160121_1_fastqc.txt (missing locally)
+pre-processing/ERR160121_2_fastqc.txt (missing locally)
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 60  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR160121_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR160121_2_fastqc.txt (missing locally, parent dir contents: )
+Approx 5% complete for ERR166338_2.fastq
+Approx 10% complete for ERR166338_2.fastq
+Approx 15% complete for ERR166338_2.fastq
+Approx 20% complete for ERR166338_2.fastq
+Approx 25% complete for ERR166338_2.fastq
+Approx 30% complete for ERR166338_2.fastq
+Approx 35% complete for ERR166338_2.fastq
+Approx 40% complete for ERR166338_2.fastq
+Approx 45% complete for ERR166338_2.fastq
+Approx 50% complete for ERR166338_2.fastq
+Approx 55% complete for ERR166338_2.fastq
+Approx 60% complete for ERR166338_2.fastq
+Approx 65% complete for ERR166338_2.fastq
+Approx 70% complete for ERR166338_2.fastq
+Approx 75% complete for ERR166338_2.fastq
+Approx 80% complete for ERR166338_2.fastq
+Approx 85% complete for ERR166338_2.fastq
+Approx 90% complete for ERR166338_2.fastq
+Approx 95% complete for ERR166338_2.fastq
+Analysis complete for ERR166338_2.fastq
+Waiting at most 5 seconds for missing files:
+pre-processing/ERR166338_1_fastqc.txt (missing locally)
+pre-processing/ERR166338_2_fastqc.txt (missing locally)
+MissingOutputException in rule fastqc_preprocessing in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 80:
+Job 59  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+pre-processing/ERR166338_1_fastqc.txt (missing locally, parent dir contents: )
+pre-processing/ERR166338_2_fastqc.txt (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 4
+    input: data/raw-reads/ERR160130_1.fastq, data/raw-reads/ERR160130_2.fastq
+    output: pre-processing/ERR160130_1_fastqc.txt, pre-processing/ERR160130_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160130_1.fastq data/raw-reads/ERR160130_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 60
+    input: data/raw-reads/ERR160121_1.fastq, data/raw-reads/ERR160121_2.fastq
+    output: pre-processing/ERR160121_1_fastqc.txt, pre-processing/ERR160121_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160121_1.fastq data/raw-reads/ERR160121_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 31
+    input: data/raw-reads/ERR160159_1.fastq, data/raw-reads/ERR160159_2.fastq
+    output: pre-processing/ERR160159_1_fastqc.txt, pre-processing/ERR160159_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160159_1.fastq data/raw-reads/ERR160159_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 80
+    input: data/raw-reads/ERR160161_1.fastq, data/raw-reads/ERR160161_2.fastq
+    output: pre-processing/ERR160161_1_fastqc.txt, pre-processing/ERR160161_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160161_1.fastq data/raw-reads/ERR160161_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 33
+    input: data/raw-reads/ERR160187_1.fastq, data/raw-reads/ERR160187_2.fastq
+    output: pre-processing/ERR160187_1_fastqc.txt, pre-processing/ERR160187_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160187_1.fastq data/raw-reads/ERR160187_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 57
+    input: data/raw-reads/ERR160170_1.fastq, data/raw-reads/ERR160170_2.fastq
+    output: pre-processing/ERR160170_1_fastqc.txt, pre-processing/ERR160170_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160170_1.fastq data/raw-reads/ERR160170_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 3
+    input: data/raw-reads/ERR160138_1.fastq, data/raw-reads/ERR160138_2.fastq
+    output: pre-processing/ERR160138_1_fastqc.txt, pre-processing/ERR160138_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160138_1.fastq data/raw-reads/ERR160138_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 59
+    input: data/raw-reads/ERR166338_1.fastq, data/raw-reads/ERR166338_2.fastq
+    output: pre-processing/ERR166338_1_fastqc.txt, pre-processing/ERR166338_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR166338_1.fastq data/raw-reads/ERR166338_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 61
+    input: data/raw-reads/ERR160171_1.fastq, data/raw-reads/ERR160171_2.fastq
+    output: pre-processing/ERR160171_1_fastqc.txt, pre-processing/ERR160171_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160171_1.fastq data/raw-reads/ERR160171_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Tue Oct 14 09:49:22 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 32
+    input: data/raw-reads/ERR160122_1.fastq, data/raw-reads/ERR160122_2.fastq
+    output: pre-processing/ERR160122_1_fastqc.txt, pre-processing/ERR160122_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160122_1.fastq data/raw-reads/ERR160122_2.fastq -o pre-processing && rm pre-processing/*.zip && rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Complete log(s): /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/log/2025-10-14T094049.638735.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -4,5 +4,6 @@ channels:
   - defaults
 dependencies:
   - trim-galore
+  - pigz
 
  
