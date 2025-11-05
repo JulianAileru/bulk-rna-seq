@@ -1,5 +1,3 @@
-# rna-exploration (Bulk RNA-seq) 
-
 ## A rna-seq analysis pipeline and demo using Bulk RNA-seq for differential gene expression
 
 - Research Paper: [RNA-seq analysis of lung adenocarcinomas reveals different gene expression profiles between smoking and nonsmoking patients]("bulk-rna-seq/papers/rna-seq-smokers-nonsmokers.pdf")
@@ -23,19 +21,3 @@
 ## workflow-graph
 <img src="bulk-rna-seq/workflow/figures/rulegraph.png" alt="Alt text" width="500">
 
-## R-dependencies 
-
-## All figures are reproductions of the original results published in the paper cited above. 
-
-
-
-
-
-# rna-exploration
-Analysis of bulk,single-cell, and spatial transcriptomics
-
-## Each Branch Operates as an Independent Repository for Bulk, Single-Cell, or Spatial transcriptomics Analysis
-
-* [Differential Gene Expression Analysis](https://github.com/JulianAileru/rna-exploration/tree/bulk-rna-seq)
-* Single-Cell Transcriptomics
-* Spatial Transcriptomics
