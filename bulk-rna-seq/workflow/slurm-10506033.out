@@ -1,0 +1,973 @@
+======================================================
+Start Time   : Mon Oct 13 09:18:21 PM EDT 2025
+Submit Dir   : /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow
+Host Name(s) : str-c193
+Job ID/Name  : 10506033 / rna-exploration
+======================================================
+
+/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile:142: SyntaxWarning: invalid escape sequence '\ '
+  shell:
+/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile:151: SyntaxWarning: invalid escape sequence '\ '
+  in1 = expand("post-processing/{sample}_1_val_1_fastqc.txt", sample=SAMPLES),
+Assuming unrestricted shared filesystem usage.
+host: str-c193.charlotte.edu
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/samtools-env.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/envs/samtools-env.yaml created (location: .snakemake/conda/ebe1ce29e564b41d4387885a89b415f4_)
+Creating conda environment envs/fastqc-env.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/envs/fastqc-env.yaml created (location: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_)
+Creating conda environment envs/trim-env.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/envs/trim-env.yaml created (location: .snakemake/conda/b2ffad17a7481e2fb6a3216a83ecce66_)
+Creating conda environment envs/hisat2-env.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/envs/hisat2-env.yaml created (location: .snakemake/conda/b34985d8d8698c465d7fa357a129b23f_)
+Creating conda environment envs/multiqc-env.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/envs/multiqc-env.yaml created (location: .snakemake/conda/eb3245041c66a7ba55a8f26e37eebb4b_)
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+convert_to_bam                78
+fastqc_postprocessing         78
+fastqc_preprocessing          78
+hisat_map_reads               78
+multiqc_post_processing        1
+multiqc_pre_processing         1
+trim_galore                   78
+total                        393
+
+Select jobs to execute...
+Execute 10 jobs...
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160196_1.fastq, data/raw-reads/ERR160196_2.fastq
+    output: pre-processing/ERR160196_1_fastqc.txt, pre-processing/ERR160196_2_fastqc.txt
+    jobid: 25
+    reason: Missing output files: pre-processing/ERR160196_1_fastqc.txt, pre-processing/ERR160196_2_fastqc.txt
+    wildcards: sample=ERR160196
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160195_1.fastq, data/raw-reads/ERR160195_2.fastq
+    output: pre-processing/ERR160195_1_fastqc.txt, pre-processing/ERR160195_2_fastqc.txt
+    jobid: 27
+    reason: Missing output files: pre-processing/ERR160195_2_fastqc.txt, pre-processing/ERR160195_1_fastqc.txt
+    wildcards: sample=ERR160195
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160173_1.fastq, data/raw-reads/ERR160173_2.fastq
+    output: pre-processing/ERR160173_1_fastqc.txt, pre-processing/ERR160173_2_fastqc.txt
+    jobid: 36
+    reason: Missing output files: pre-processing/ERR160173_1_fastqc.txt, pre-processing/ERR160173_2_fastqc.txt
+    wildcards: sample=ERR160173
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160158_1.fastq, data/raw-reads/ERR160158_2.fastq
+    output: pre-processing/ERR160158_1_fastqc.txt, pre-processing/ERR160158_2_fastqc.txt
+    jobid: 22
+    reason: Missing output files: pre-processing/ERR160158_2_fastqc.txt, pre-processing/ERR160158_1_fastqc.txt
+    wildcards: sample=ERR160158
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160167_1.fastq, data/raw-reads/ERR160167_2.fastq
+    output: pre-processing/ERR160167_1_fastqc.txt, pre-processing/ERR160167_2_fastqc.txt
+    jobid: 55
+    reason: Missing output files: pre-processing/ERR160167_1_fastqc.txt, pre-processing/ERR160167_2_fastqc.txt
+    wildcards: sample=ERR160167
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160162_1.fastq, data/raw-reads/ERR160162_2.fastq
+    output: pre-processing/ERR160162_1_fastqc.txt, pre-processing/ERR160162_2_fastqc.txt
+    jobid: 12
+    reason: Missing output files: pre-processing/ERR160162_1_fastqc.txt, pre-processing/ERR160162_2_fastqc.txt
+    wildcards: sample=ERR160162
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160142_1.fastq, data/raw-reads/ERR160142_2.fastq
+    output: pre-processing/ERR160142_1_fastqc.txt, pre-processing/ERR160142_2_fastqc.txt
+    jobid: 28
+    reason: Missing output files: pre-processing/ERR160142_1_fastqc.txt, pre-processing/ERR160142_2_fastqc.txt
+    wildcards: sample=ERR160142
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160144_1.fastq, data/raw-reads/ERR160144_2.fastq
+    output: pre-processing/ERR160144_1_fastqc.txt, pre-processing/ERR160144_2_fastqc.txt
+    jobid: 63
+    reason: Missing output files: pre-processing/ERR160144_2_fastqc.txt, pre-processing/ERR160144_1_fastqc.txt
+    wildcards: sample=ERR160144
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160185_1.fastq, data/raw-reads/ERR160185_2.fastq
+    output: pre-processing/ERR160185_1_fastqc.txt, pre-processing/ERR160185_2_fastqc.txt
+    jobid: 79
+    reason: Missing output files: pre-processing/ERR160185_2_fastqc.txt, pre-processing/ERR160185_1_fastqc.txt
+    wildcards: sample=ERR160185
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+
+[Mon Oct 13 21:26:46 2025]
+localrule fastqc_preprocessing:
+    input: data/raw-reads/ERR160176_1.fastq, data/raw-reads/ERR160176_2.fastq
+    output: pre-processing/ERR160176_1_fastqc.txt, pre-processing/ERR160176_2_fastqc.txt
+    jobid: 56
+    reason: Missing output files: pre-processing/ERR160176_1_fastqc.txt, pre-processing/ERR160176_2_fastqc.txt
+    wildcards: sample=ERR160176
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+Skipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be readSkipping ' ' which didn't exist, or couldn't be read
+
+Skipping ' ' which didn't exist, or couldn't be read
+Skipping ' ' which didn't exist, or couldn't be read
+
+
+
+
+
+Skipping ' ' which didn't exist, or couldn't be read
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+nullnullnullnull
+
+
+
+null
+null
+nullnull
+
+Started analysis of ERR160195_1.fastqnull
+
+Started analysis of ERR160185_1.fastqnull
+Started analysis of ERR160144_1.fastq
+
+Started analysis of ERR160162_1.fastq
+Started analysis of ERR160176_1.fastq
+Started analysis of ERR160173_1.fastq
+Started analysis of ERR160196_1.fastq
+Started analysis of ERR160167_1.fastq
+Started analysis of ERR160158_1.fastq
+Select jobs to execute...
+Started analysis of ERR160142_1.fastq
+Approx 5% complete for ERR160196_1.fastq
+Approx 5% complete for ERR160185_1.fastq
+Approx 5% complete for ERR160195_1.fastq
+Approx 5% complete for ERR160158_1.fastq
+Approx 5% complete for ERR160162_1.fastq
+Approx 5% complete for ERR160167_1.fastq
+Approx 5% complete for ERR160173_1.fastq
+Approx 5% complete for ERR160176_1.fastq
+Approx 5% complete for ERR160142_1.fastq
+Approx 5% complete for ERR160144_1.fastq
+Approx 10% complete for ERR160196_1.fastq
+Approx 10% complete for ERR160195_1.fastq
+Approx 10% complete for ERR160185_1.fastq
+Approx 10% complete for ERR160158_1.fastq
+Approx 10% complete for ERR160162_1.fastq
+Approx 10% complete for ERR160167_1.fastq
+Approx 15% complete for ERR160196_1.fastq
+Approx 10% complete for ERR160142_1.fastq
+Approx 10% complete for ERR160173_1.fastq
+Approx 15% complete for ERR160185_1.fastq
+Approx 15% complete for ERR160195_1.fastq
+Approx 10% complete for ERR160176_1.fastq
+Approx 15% complete for ERR160158_1.fastq
+Approx 10% complete for ERR160144_1.fastq
+Approx 20% complete for ERR160196_1.fastq
+Approx 15% complete for ERR160162_1.fastq
+Approx 15% complete for ERR160167_1.fastq
+Approx 20% complete for ERR160185_1.fastq
+Approx 20% complete for ERR160195_1.fastq
+Approx 20% complete for ERR160158_1.fastq
+Approx 15% complete for ERR160142_1.fastq
+Approx 15% complete for ERR160173_1.fastq
+Approx 15% complete for ERR160176_1.fastq
+Approx 25% complete for ERR160196_1.fastq
+Approx 15% complete for ERR160144_1.fastq
+Approx 25% complete for ERR160185_1.fastq
+Approx 25% complete for ERR160195_1.fastq
+Approx 20% complete for ERR160162_1.fastq
+Approx 25% complete for ERR160158_1.fastq
+Approx 20% complete for ERR160167_1.fastq
+Approx 20% complete for ERR160142_1.fastq
+Approx 30% complete for ERR160196_1.fastq
+Approx 20% complete for ERR160173_1.fastq
+Approx 30% complete for ERR160185_1.fastq
+Approx 30% complete for ERR160195_1.fastq
+Approx 20% complete for ERR160176_1.fastq
+Approx 30% complete for ERR160158_1.fastq
+Approx 20% complete for ERR160144_1.fastq
+Approx 25% complete for ERR160162_1.fastq
+Approx 35% complete for ERR160196_1.fastq
+Approx 25% complete for ERR160167_1.fastq
+Approx 25% complete for ERR160142_1.fastq
+Approx 35% complete for ERR160185_1.fastq
+Approx 35% complete for ERR160195_1.fastq
+Approx 25% complete for ERR160173_1.fastq
+Approx 35% complete for ERR160158_1.fastq
+Approx 40% complete for ERR160196_1.fastq
+Approx 25% complete for ERR160176_1.fastq
+Approx 30% complete for ERR160162_1.fastq
+Approx 30% complete for ERR160167_1.fastq
+Approx 40% complete for ERR160185_1.fastq
+Approx 40% complete for ERR160195_1.fastq
+Approx 25% complete for ERR160144_1.fastq
+Approx 30% complete for ERR160142_1.fastq
+Approx 40% complete for ERR160158_1.fastq
+Approx 45% complete for ERR160196_1.fastq
+Approx 30% complete for ERR160173_1.fastq
+Approx 45% complete for ERR160185_1.fastq
+Approx 45% complete for ERR160195_1.fastq
+Approx 30% complete for ERR160176_1.fastq
+Approx 35% complete for ERR160162_1.fastq
+Approx 35% complete for ERR160167_1.fastq
+Approx 50% complete for ERR160196_1.fastq
+Approx 45% complete for ERR160158_1.fastq
+Approx 35% complete for ERR160142_1.fastq
+Approx 30% complete for ERR160144_1.fastq
+Approx 35% complete for ERR160173_1.fastq
+Approx 50% complete for ERR160185_1.fastq
+Approx 50% complete for ERR160195_1.fastq
+Approx 55% complete for ERR160196_1.fastq
+Approx 40% complete for ERR160162_1.fastq
+Approx 50% complete for ERR160158_1.fastq
+Approx 40% complete for ERR160167_1.fastq
+Approx 35% complete for ERR160176_1.fastq
+Approx 40% complete for ERR160142_1.fastq
+Approx 55% complete for ERR160185_1.fastq
+Approx 55% complete for ERR160195_1.fastq
+Approx 60% complete for ERR160196_1.fastq
+Approx 35% complete for ERR160144_1.fastq
+Approx 40% complete for ERR160173_1.fastq
+Approx 55% complete for ERR160158_1.fastq
+Approx 45% complete for ERR160162_1.fastq
+Approx 45% complete for ERR160167_1.fastq
+Approx 60% complete for ERR160185_1.fastq
+Approx 60% complete for ERR160195_1.fastq
+Approx 65% complete for ERR160196_1.fastq
+Approx 40% complete for ERR160176_1.fastq
+Approx 45% complete for ERR160142_1.fastq
+Approx 60% complete for ERR160158_1.fastq
+Approx 45% complete for ERR160173_1.fastq
+Approx 40% complete for ERR160144_1.fastq
+Approx 65% complete for ERR160185_1.fastq
+Approx 50% complete for ERR160162_1.fastq
+Approx 65% complete for ERR160195_1.fastq
+Approx 70% complete for ERR160196_1.fastq
+Approx 50% complete for ERR160167_1.fastq
+Approx 50% complete for ERR160142_1.fastq
+Approx 65% complete for ERR160158_1.fastq
+Approx 45% complete for ERR160176_1.fastq
+Approx 70% complete for ERR160185_1.fastq
+Approx 75% complete for ERR160196_1.fastq
+Approx 70% complete for ERR160195_1.fastq
+Approx 50% complete for ERR160173_1.fastq
+Approx 55% complete for ERR160162_1.fastq
+Approx 45% complete for ERR160144_1.fastq
+Approx 55% complete for ERR160167_1.fastq
+Approx 70% complete for ERR160158_1.fastq
+Approx 55% complete for ERR160142_1.fastq
+Approx 80% complete for ERR160196_1.fastq
+Approx 75% complete for ERR160185_1.fastq
+Approx 75% complete for ERR160195_1.fastq
+Approx 50% complete for ERR160176_1.fastq
+Approx 55% complete for ERR160173_1.fastq
+Approx 60% complete for ERR160162_1.fastq
+Approx 75% complete for ERR160158_1.fastq
+Approx 60% complete for ERR160167_1.fastq
+Approx 85% complete for ERR160196_1.fastq
+Approx 80% complete for ERR160185_1.fastq
+Approx 50% complete for ERR160144_1.fastq
+Approx 80% complete for ERR160195_1.fastq
+Approx 60% complete for ERR160142_1.fastq
+Approx 55% complete for ERR160176_1.fastq
+Approx 80% complete for ERR160158_1.fastq
+Approx 90% complete for ERR160196_1.fastq
+Approx 65% complete for ERR160162_1.fastq
+Approx 60% complete for ERR160173_1.fastq
+Approx 85% complete for ERR160185_1.fastq
+Approx 85% complete for ERR160195_1.fastq
+Approx 65% complete for ERR160167_1.fastq
+Approx 65% complete for ERR160142_1.fastq
+Approx 55% complete for ERR160144_1.fastq
+Approx 95% complete for ERR160196_1.fastq
+Approx 85% complete for ERR160158_1.fastq
+Approx 90% complete for ERR160185_1.fastq
+Approx 90% complete for ERR160195_1.fastq
+Approx 70% complete for ERR160162_1.fastq
+Approx 65% complete for ERR160173_1.fastq
+Approx 60% complete for ERR160176_1.fastq
+Approx 70% complete for ERR160167_1.fastq
+Analysis complete for ERR160196_1.fastq
+Approx 90% complete for ERR160158_1.fastq
+Approx 95% complete for ERR160185_1.fastq
+Approx 70% complete for ERR160142_1.fastq
+Approx 95% complete for ERR160195_1.fastq
+Approx 60% complete for ERR160144_1.fastq
+Started analysis of ERR160196_2.fastq
+Approx 75% complete for ERR160162_1.fastq
+Approx 70% complete for ERR160173_1.fastq
+Approx 75% complete for ERR160167_1.fastq
+Approx 65% complete for ERR160176_1.fastq
+Analysis complete for ERR160185_1.fastq
+Approx 95% complete for ERR160158_1.fastq
+Analysis complete for ERR160195_1.fastq
+Started analysis of ERR160185_2.fastq
+Approx 75% complete for ERR160142_1.fastq
+Approx 5% complete for ERR160196_2.fastq
+Started analysis of ERR160195_2.fastq
+Approx 80% complete for ERR160162_1.fastq
+Approx 65% complete for ERR160144_1.fastq
+Approx 75% complete for ERR160173_1.fastq
+Analysis complete for ERR160158_1.fastq
+Approx 80% complete for ERR160167_1.fastq
+Approx 70% complete for ERR160176_1.fastq
+Approx 10% complete for ERR160196_2.fastq
+Approx 5% complete for ERR160185_2.fastq
+Started analysis of ERR160158_2.fastq
+Approx 5% complete for ERR160195_2.fastq
+Approx 80% complete for ERR160142_1.fastq
+Approx 85% complete for ERR160162_1.fastq
+Approx 15% complete for ERR160196_2.fastq
+Approx 85% complete for ERR160167_1.fastq
+Approx 10% complete for ERR160185_2.fastq
+Approx 80% complete for ERR160173_1.fastq
+Approx 70% complete for ERR160144_1.fastq
+Approx 5% complete for ERR160158_2.fastq
+Approx 10% complete for ERR160195_2.fastq
+Approx 75% complete for ERR160176_1.fastq
+Approx 85% complete for ERR160142_1.fastq
+Approx 20% complete for ERR160196_2.fastq
+Approx 90% complete for ERR160162_1.fastq
+Approx 15% complete for ERR160185_2.fastq
+Approx 15% complete for ERR160195_2.fastq
+Approx 10% complete for ERR160158_2.fastq
+Approx 90% complete for ERR160167_1.fastq
+Approx 85% complete for ERR160173_1.fastq
+Approx 75% complete for ERR160144_1.fastq
+Approx 25% complete for ERR160196_2.fastq
+Approx 80% complete for ERR160176_1.fastq
+Approx 90% complete for ERR160142_1.fastq
+Approx 20% complete for ERR160185_2.fastq
+Approx 20% complete for ERR160195_2.fastq
+Approx 95% complete for ERR160162_1.fastq
+Approx 15% complete for ERR160158_2.fastq
+Approx 95% complete for ERR160167_1.fastq
+Approx 90% complete for ERR160173_1.fastq
+Approx 30% complete for ERR160196_2.fastq
+Approx 25% complete for ERR160185_2.fastq
+Approx 25% complete for ERR160195_2.fastq
+Approx 95% complete for ERR160142_1.fastq
+Approx 80% complete for ERR160144_1.fastq
+Approx 20% complete for ERR160158_2.fastq
+Approx 85% complete for ERR160176_1.fastq
+Approx 100% complete for ERR160162_1.fastq
+Analysis complete for ERR160162_1.fastq
+Approx 35% complete for ERR160196_2.fastq
+Started analysis of ERR160162_2.fastq
+Analysis complete for ERR160167_1.fastq
+Approx 30% complete for ERR160185_2.fastq
+Approx 95% complete for ERR160173_1.fastq
+Approx 30% complete for ERR160195_2.fastq
+Started analysis of ERR160167_2.fastq
+Approx 25% complete for ERR160158_2.fastq
+Analysis complete for ERR160142_1.fastq
+Approx 40% complete for ERR160196_2.fastq
+Approx 90% complete for ERR160176_1.fastq
+Approx 85% complete for ERR160144_1.fastq
+Started analysis of ERR160142_2.fastq
+Approx 35% complete for ERR160185_2.fastq
+Approx 35% complete for ERR160195_2.fastq
+Approx 5% complete for ERR160162_2.fastq
+Approx 30% complete for ERR160158_2.fastq
+Analysis complete for ERR160173_1.fastq
+Approx 5% complete for ERR160167_2.fastq
+Approx 45% complete for ERR160196_2.fastq
+Started analysis of ERR160173_2.fastq
+Approx 40% complete for ERR160185_2.fastq
+Approx 40% complete for ERR160195_2.fastq
+Approx 5% complete for ERR160142_2.fastq
+Approx 95% complete for ERR160176_1.fastq
+Approx 90% complete for ERR160144_1.fastq
+Approx 35% complete for ERR160158_2.fastq
+Approx 10% complete for ERR160162_2.fastq
+Approx 50% complete for ERR160196_2.fastq
+Approx 10% complete for ERR160167_2.fastq
+Approx 45% complete for ERR160185_2.fastq
+Approx 45% complete for ERR160195_2.fastq
+Approx 5% complete for ERR160173_2.fastq
+Approx 40% complete for ERR160158_2.fastq
+Approx 55% complete for ERR160196_2.fastq
+Approx 10% complete for ERR160142_2.fastq
+Analysis complete for ERR160176_1.fastq
+Approx 15% complete for ERR160162_2.fastq
+Approx 95% complete for ERR160144_1.fastq
+Started analysis of ERR160176_2.fastq
+Approx 50% complete for ERR160185_2.fastq
+Approx 50% complete for ERR160195_2.fastq
+Approx 15% complete for ERR160167_2.fastq
+Approx 60% complete for ERR160196_2.fastq
+Approx 45% complete for ERR160158_2.fastq
+Approx 10% complete for ERR160173_2.fastq
+Approx 15% complete for ERR160142_2.fastq
+Approx 55% complete for ERR160185_2.fastq
+Approx 55% complete for ERR160195_2.fastq
+Approx 20% complete for ERR160162_2.fastq
+Approx 65% complete for ERR160196_2.fastq
+Analysis complete for ERR160144_1.fastq
+Approx 20% complete for ERR160167_2.fastq
+Approx 50% complete for ERR160158_2.fastq
+Approx 5% complete for ERR160176_2.fastq
+Started analysis of ERR160144_2.fastq
+Approx 15% complete for ERR160173_2.fastq
+Approx 60% complete for ERR160185_2.fastq
+Approx 60% complete for ERR160195_2.fastq
+Approx 20% complete for ERR160142_2.fastq
+Approx 70% complete for ERR160196_2.fastq
+Approx 25% complete for ERR160162_2.fastq
+Approx 55% complete for ERR160158_2.fastq
+Approx 25% complete for ERR160167_2.fastq
+Approx 65% complete for ERR160195_2.fastq
+Approx 65% complete for ERR160185_2.fastq
+Approx 10% complete for ERR160176_2.fastq
+Approx 75% complete for ERR160196_2.fastq
+Approx 20% complete for ERR160173_2.fastq
+Approx 5% complete for ERR160144_2.fastq
+Approx 25% complete for ERR160142_2.fastq
+Approx 60% complete for ERR160158_2.fastq
+Approx 30% complete for ERR160162_2.fastq
+Approx 70% complete for ERR160195_2.fastq
+Approx 70% complete for ERR160185_2.fastq
+Approx 30% complete for ERR160167_2.fastq
+Approx 80% complete for ERR160196_2.fastq
+Approx 65% complete for ERR160158_2.fastq
+Approx 15% complete for ERR160176_2.fastq
+Approx 25% complete for ERR160173_2.fastq
+Approx 30% complete for ERR160142_2.fastq
+Approx 10% complete for ERR160144_2.fastq
+Approx 75% complete for ERR160195_2.fastq
+Approx 75% complete for ERR160185_2.fastq
+Approx 35% complete for ERR160162_2.fastq
+Approx 85% complete for ERR160196_2.fastq
+Approx 35% complete for ERR160167_2.fastq
+Approx 70% complete for ERR160158_2.fastq
+Approx 80% complete for ERR160195_2.fastq
+Approx 90% complete for ERR160196_2.fastq
+Approx 80% complete for ERR160185_2.fastq
+Approx 30% complete for ERR160173_2.fastq
+Approx 35% complete for ERR160142_2.fastq
+Approx 20% complete for ERR160176_2.fastq
+Approx 40% complete for ERR160162_2.fastq
+Approx 15% complete for ERR160144_2.fastq
+Approx 40% complete for ERR160167_2.fastq
+Approx 75% complete for ERR160158_2.fastq
+Approx 95% complete for ERR160196_2.fastq
+Approx 85% complete for ERR160195_2.fastq
+Approx 85% complete for ERR160185_2.fastq
+Approx 40% complete for ERR160142_2.fastq
+Approx 35% complete for ERR160173_2.fastq
+Approx 80% complete for ERR160158_2.fastq
+Approx 45% complete for ERR160162_2.fastq
+Approx 25% complete for ERR160176_2.fastq
+Analysis complete for ERR160196_2.fastq
+Approx 45% complete for ERR160167_2.fastq
+Approx 90% complete for ERR160195_2.fastq
+Approx 90% complete for ERR160185_2.fastq
+Approx 20% complete for ERR160144_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160196_1.fastq data/raw-reads/ERR160196_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:28:49 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 25
+    input: data/raw-reads/ERR160196_1.fastq, data/raw-reads/ERR160196_2.fastq
+    output: pre-processing/ERR160196_1_fastqc.txt, pre-processing/ERR160196_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160196_1.fastq data/raw-reads/ERR160196_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 45% complete for ERR160142_2.fastq
+Approx 85% complete for ERR160158_2.fastq
+Approx 40% complete for ERR160173_2.fastq
+Approx 95% complete for ERR160195_2.fastq
+Approx 95% complete for ERR160185_2.fastq
+Approx 50% complete for ERR160162_2.fastq
+Approx 50% complete for ERR160167_2.fastq
+Approx 30% complete for ERR160176_2.fastq
+Approx 25% complete for ERR160144_2.fastq
+Approx 90% complete for ERR160158_2.fastq
+Analysis complete for ERR160195_2.fastq
+Analysis complete for ERR160185_2.fastq
+Approx 50% complete for ERR160142_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160195_1.fastq data/raw-reads/ERR160195_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:28:55 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 27
+    input: data/raw-reads/ERR160195_1.fastq, data/raw-reads/ERR160195_2.fastq
+    output: pre-processing/ERR160195_1_fastqc.txt, pre-processing/ERR160195_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160195_1.fastq data/raw-reads/ERR160195_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 45% complete for ERR160173_2.fastq
+Approx 55% complete for ERR160162_2.fastq
+rm: cannot remove 'pre-processing/*.zip': No such file or directory
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160185_1.fastq data/raw-reads/ERR160185_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:28:56 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 79
+    input: data/raw-reads/ERR160185_1.fastq, data/raw-reads/ERR160185_2.fastq
+    output: pre-processing/ERR160185_1_fastqc.txt, pre-processing/ERR160185_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160185_1.fastq data/raw-reads/ERR160185_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 55% complete for ERR160167_2.fastq
+Approx 35% complete for ERR160176_2.fastq
+Approx 95% complete for ERR160158_2.fastq
+Approx 30% complete for ERR160144_2.fastq
+Approx 55% complete for ERR160142_2.fastq
+Approx 50% complete for ERR160173_2.fastq
+Approx 60% complete for ERR160162_2.fastq
+Approx 60% complete for ERR160167_2.fastq
+Analysis complete for ERR160158_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160158_1.fastq data/raw-reads/ERR160158_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:29:01 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 22
+    input: data/raw-reads/ERR160158_1.fastq, data/raw-reads/ERR160158_2.fastq
+    output: pre-processing/ERR160158_1_fastqc.txt, pre-processing/ERR160158_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160158_1.fastq data/raw-reads/ERR160158_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 40% complete for ERR160176_2.fastq
+Approx 60% complete for ERR160142_2.fastq
+Approx 35% complete for ERR160144_2.fastq
+Approx 55% complete for ERR160173_2.fastq
+Approx 65% complete for ERR160162_2.fastq
+Approx 65% complete for ERR160167_2.fastq
+Approx 45% complete for ERR160176_2.fastq
+Approx 65% complete for ERR160142_2.fastq
+Approx 70% complete for ERR160162_2.fastq
+Approx 60% complete for ERR160173_2.fastq
+Approx 70% complete for ERR160167_2.fastq
+Approx 40% complete for ERR160144_2.fastq
+Approx 70% complete for ERR160142_2.fastq
+Approx 50% complete for ERR160176_2.fastq
+Approx 75% complete for ERR160162_2.fastq
+Approx 75% complete for ERR160167_2.fastq
+Approx 65% complete for ERR160173_2.fastq
+Approx 45% complete for ERR160144_2.fastq
+Approx 75% complete for ERR160142_2.fastq
+Approx 55% complete for ERR160176_2.fastq
+Approx 80% complete for ERR160167_2.fastq
+Approx 80% complete for ERR160162_2.fastq
+Approx 70% complete for ERR160173_2.fastq
+Approx 50% complete for ERR160144_2.fastq
+Approx 80% complete for ERR160142_2.fastq
+Approx 85% complete for ERR160167_2.fastq
+Approx 85% complete for ERR160162_2.fastq
+Approx 60% complete for ERR160176_2.fastq
+Approx 75% complete for ERR160173_2.fastq
+Approx 85% complete for ERR160142_2.fastq
+Approx 55% complete for ERR160144_2.fastq
+Approx 90% complete for ERR160167_2.fastq
+Approx 90% complete for ERR160162_2.fastq
+Approx 80% complete for ERR160173_2.fastq
+Approx 65% complete for ERR160176_2.fastq
+Approx 90% complete for ERR160142_2.fastq
+Approx 95% complete for ERR160167_2.fastq
+Approx 60% complete for ERR160144_2.fastq
+Approx 95% complete for ERR160162_2.fastq
+Approx 85% complete for ERR160173_2.fastq
+Approx 70% complete for ERR160176_2.fastq
+Approx 95% complete for ERR160142_2.fastq
+Analysis complete for ERR160167_2.fastq
+Approx 100% complete for ERR160162_2.fastq
+Analysis complete for ERR160162_2.fastq
+Approx 65% complete for ERR160144_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160167_1.fastq data/raw-reads/ERR160167_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:29:35 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 55
+    input: data/raw-reads/ERR160167_1.fastq, data/raw-reads/ERR160167_2.fastq
+    output: pre-processing/ERR160167_1_fastqc.txt, pre-processing/ERR160167_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160167_1.fastq data/raw-reads/ERR160167_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+rm: cannot remove 'pre-processing/*.zip': No such file or directory
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160162_1.fastq data/raw-reads/ERR160162_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:29:35 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 12
+    input: data/raw-reads/ERR160162_1.fastq, data/raw-reads/ERR160162_2.fastq
+    output: pre-processing/ERR160162_1_fastqc.txt, pre-processing/ERR160162_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160162_1.fastq data/raw-reads/ERR160162_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 90% complete for ERR160173_2.fastq
+Approx 75% complete for ERR160176_2.fastq
+Analysis complete for ERR160142_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160142_1.fastq data/raw-reads/ERR160142_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:29:38 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 28
+    input: data/raw-reads/ERR160142_1.fastq, data/raw-reads/ERR160142_2.fastq
+    output: pre-processing/ERR160142_1_fastqc.txt, pre-processing/ERR160142_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160142_1.fastq data/raw-reads/ERR160142_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 95% complete for ERR160173_2.fastq
+Approx 70% complete for ERR160144_2.fastq
+Approx 80% complete for ERR160176_2.fastq
+Analysis complete for ERR160173_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160173_1.fastq data/raw-reads/ERR160173_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:29:45 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 36
+    input: data/raw-reads/ERR160173_1.fastq, data/raw-reads/ERR160173_2.fastq
+    output: pre-processing/ERR160173_1_fastqc.txt, pre-processing/ERR160173_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160173_1.fastq data/raw-reads/ERR160173_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 75% complete for ERR160144_2.fastq
+Approx 85% complete for ERR160176_2.fastq
+Approx 80% complete for ERR160144_2.fastq
+Approx 90% complete for ERR160176_2.fastq
+Approx 85% complete for ERR160144_2.fastq
+Approx 95% complete for ERR160176_2.fastq
+Approx 90% complete for ERR160144_2.fastq
+Analysis complete for ERR160176_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160176_1.fastq data/raw-reads/ERR160176_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:30:02 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 56
+    input: data/raw-reads/ERR160176_1.fastq, data/raw-reads/ERR160176_2.fastq
+    output: pre-processing/ERR160176_1_fastqc.txt, pre-processing/ERR160176_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160176_1.fastq data/raw-reads/ERR160176_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Approx 95% complete for ERR160144_2.fastq
+Analysis complete for ERR160144_2.fastq
+rm: cannot remove ' ': No such file or directory
+RuleException:
+CalledProcessError in file "/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/Snakefile", line 90:
+Command 'source /apps/pkg/anaconda3/2023.09/bin/activate '/projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_'; set -euo pipefail;  
+    fastqc data/raw-reads/ERR160144_1.fastq data/raw-reads/ERR160144_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html' returned non-zero exit status 1.
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 63
+    input: data/raw-reads/ERR160144_1.fastq, data/raw-reads/ERR160144_2.fastq
+    output: pre-processing/ERR160144_1_fastqc.txt, pre-processing/ERR160144_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160144_1.fastq data/raw-reads/ERR160144_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 25
+    input: data/raw-reads/ERR160196_1.fastq, data/raw-reads/ERR160196_2.fastq
+    output: pre-processing/ERR160196_1_fastqc.txt, pre-processing/ERR160196_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160196_1.fastq data/raw-reads/ERR160196_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 27
+    input: data/raw-reads/ERR160195_1.fastq, data/raw-reads/ERR160195_2.fastq
+    output: pre-processing/ERR160195_1_fastqc.txt, pre-processing/ERR160195_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160195_1.fastq data/raw-reads/ERR160195_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 36
+    input: data/raw-reads/ERR160173_1.fastq, data/raw-reads/ERR160173_2.fastq
+    output: pre-processing/ERR160173_1_fastqc.txt, pre-processing/ERR160173_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160173_1.fastq data/raw-reads/ERR160173_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 22
+    input: data/raw-reads/ERR160158_1.fastq, data/raw-reads/ERR160158_2.fastq
+    output: pre-processing/ERR160158_1_fastqc.txt, pre-processing/ERR160158_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160158_1.fastq data/raw-reads/ERR160158_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 55
+    input: data/raw-reads/ERR160167_1.fastq, data/raw-reads/ERR160167_2.fastq
+    output: pre-processing/ERR160167_1_fastqc.txt, pre-processing/ERR160167_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160167_1.fastq data/raw-reads/ERR160167_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 12
+    input: data/raw-reads/ERR160162_1.fastq, data/raw-reads/ERR160162_2.fastq
+    output: pre-processing/ERR160162_1_fastqc.txt, pre-processing/ERR160162_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160162_1.fastq data/raw-reads/ERR160162_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 28
+    input: data/raw-reads/ERR160142_1.fastq, data/raw-reads/ERR160142_2.fastq
+    output: pre-processing/ERR160142_1_fastqc.txt, pre-processing/ERR160142_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160142_1.fastq data/raw-reads/ERR160142_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 63
+    input: data/raw-reads/ERR160144_1.fastq, data/raw-reads/ERR160144_2.fastq
+    output: pre-processing/ERR160144_1_fastqc.txt, pre-processing/ERR160144_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160144_1.fastq data/raw-reads/ERR160144_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 79
+    input: data/raw-reads/ERR160185_1.fastq, data/raw-reads/ERR160185_2.fastq
+    output: pre-processing/ERR160185_1_fastqc.txt, pre-processing/ERR160185_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160185_1.fastq data/raw-reads/ERR160185_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+[Mon Oct 13 21:30:11 2025]
+Error in rule fastqc_preprocessing:
+    message: None
+    jobid: 56
+    input: data/raw-reads/ERR160176_1.fastq, data/raw-reads/ERR160176_2.fastq
+    output: pre-processing/ERR160176_1_fastqc.txt, pre-processing/ERR160176_2_fastqc.txt
+    conda-env: /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/conda/59f96eeb3a89442ecabf6f5eae5fbea9_
+    shell:
+        
+    fastqc data/raw-reads/ERR160176_1.fastq data/raw-reads/ERR160176_2.fastq -o pre-processing \ &&
+    rm pre-processing/*.zip \ &&
+    rm pre-processing/*.html
+    
+        (command exited with non-zero exit code)
+Complete log(s): /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow/.snakemake/log/2025-10-13T211826.363426.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

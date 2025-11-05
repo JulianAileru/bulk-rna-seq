@@ -1,0 +1,8 @@
+======================================================
+Start Time   : Thu Oct 30 09:33:57 PM EDT 2025
+Submit Dir   : /projects/cindel/jaileru/rna-exploration/bulk-rna-seq/workflow
+Host Name(s) : str-c189
+Job ID/Name  : 11720183 / rna-exploration
+======================================================
+
+/var/spool/slurm/slurmd/job11720183/slurm_script: line 20: snakemake: command not found

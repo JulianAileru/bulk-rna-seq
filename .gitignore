@@ -1,0 +1,3 @@
+bulk-rna-seq/workflow/data/raw-reads/
+**/.snakemake/
+bulk-rna-seq/workflow/reference/

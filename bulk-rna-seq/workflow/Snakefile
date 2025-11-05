@@ -1,0 +1,224 @@
+#Quality Control, Tool: FastQC
+#Phase I Read Alignment, Tool: STAR
+#Phase II Transcript Quantification, Tool: featureCounts 
+
+import os
+import yaml
+import glob
+from utils.helper_functions import *
+configfile: "config.yaml"
+
+def get_samples(folder):
+  lst = os.listdir(folder)
+  lst = [x.split("_")[0] for x in lst]
+  return list(set(lst))
+
+with(open("params/trim_galore_params.yaml")) as f1:
+  trim_galore_params = yaml.safe_load(f1)
+
+
+SAMPLES = get_samples(folder='data/raw-reads')
+# genome = os.path.basename(config['reference_genome'])
+
+rule all:
+  input:
+# --Get Reference Genome--
+    f"reference/genome.fa",
+    f"reference/genome.gtf",
+# ---Quality-Control---
+    # FastQC Check and MultiQC Report 
+    expand("pre-processing/{sample}_1_fastqc.html",sample=SAMPLES),
+    expand("pre-processing/{sample}_2_fastqc.html",sample=SAMPLES),
+    "multiqc/pre_processing_report.html",
+
+    # Trim Reads 
+    expand("data/trimmed_reads/{sample}_1_val_1.fq",sample=SAMPLES),
+    expand("data/trimmed_reads/{sample}_2_val_2.fq",sample=SAMPLES),
+
+    # FastQC Check 
+    expand("post-processing/{sample}_1_val_1_fastqc.html", sample=SAMPLES),
+    expand("post-processing/{sample}_2_val_2_fastqc.html", sample=SAMPLES),
+    "multiqc/post_processing_report.html",
+# ---Read Alignment (PhaseI)---
+    # Build Reference Genome
+    "reference/genome-index/genome.ht2.done",
+    # Map Reads to Reference Genome
+    expand("data/sam-files/{sample}.sam",sample=SAMPLES),
+# ---Read Quantification (PhaseII)---
+    # Convert to BAM
+    expand("data/bam-files/{sample}.bam",sample=SAMPLES),
+    # Get FeatureCounts Table
+    "results/final_counts.txt"
+
+rule get_reference:
+  params:
+    genome_url = config["reference_genome"],
+    gtf_url = config["reference_genome_gtf"]
+  output:
+    o1 = f"reference/archive/{os.path.basename(config['reference_genome'])}",
+    o2 = f"reference/archive/{os.path.basename(config['reference_genome_gtf'])}"
+  shell:
+    """
+    mkdir -p reference/archive
+    wget -L -O {output.o1} {params.genome_url}
+    wget -L -O {output.o2} {params.gtf_url}
+    """
+rule gunzip_reference:
+  input:
+    f1 = f"reference/archive/{os.path.basename(config['reference_genome'])}",
+    f2 = f"reference/archive/{os.path.basename(config['reference_genome_gtf'])}"
+  output:
+    o3 = f'reference/genome.fa',
+    o4 = f'reference/genome.gtf'
+  shell:
+    """
+    gunzip -c {input.f1} > {output.o3}
+    gunzip -c {input.f2} > {output.o4}
+    """
+
+
+rule fastqc_preprocessing:
+  input:
+    r1 = "data/raw-reads/{sample}_1.fastq",
+    r2 = "data/raw-reads/{sample}_2.fastq"
+  output:
+    r1_report = "pre-processing/{sample}_1_fastqc.html",
+    r2_report = "pre-processing/{sample}_2_fastqc.html"
+  conda:
+    "envs/fastqc-env.yaml"
+  threads:
+    10
+  shell:
+    """
+    fastqc {input.r1} {input.r2} --threads {threads} -o pre-processing && rm pre-processing/*.zip
+    """
+rule multiqc_pre_processing:
+    input:
+      r1 = expand("pre-processing/{sample}_1_fastqc.html",sample=SAMPLES),
+      r2 = expand("pre-processing/{sample}_2_fastqc.html",sample=SAMPLES)
+    output:
+      "multiqc/pre_processing_report.html"
+    conda:
+      "envs/multiqc-env.yaml"
+    shell:
+      "multiqc pre-processing -o {output}"
+
+rule trim_galore:
+  input:
+    r1 = "data/raw-reads/{sample}_1.fastq",
+    r2 = "data/raw-reads/{sample}_2.fastq"
+  output:
+    "data/trimmed_reads/{sample}_1_val_1.fq",
+    "data/trimmed_reads/{sample}_2_val_2.fq",
+    "post-processing/{sample}_1.fastq_trimming_report.txt",
+    "post-processing/{sample}_2.fastq_trimming_report.txt"
+  conda:
+    "envs/trim-env.yaml"
+  threads:
+    10
+  params:
+    quality = trim_galore_params['quality'],
+    length = trim_galore_params['length'],
+    clip_R1 = trim_galore_params['clip_R1'],
+    clip_R2 = trim_galore_params['clip_R2']
+  shell:
+    """
+    trim_galore \
+        --phred33 \
+        --cores {threads} \
+        --quality 20 \
+        --illumina \
+        --length 25 \
+        --paired \
+        --output_dir data/trimmed_reads/ \
+        --clip_R1 5 \
+        --clip_R2 5 \
+        {input.r1} \
+        {input.r2} && \
+    mv data/trimmed_reads/*.txt post-processing/
+    """
+
+rule fastqc_postprocessing:
+  input:
+    r1 = expand("data/trimmed_reads/{sample}_1_val_1.fq",sample=SAMPLES),
+    r2 = expand("data/trimmed_reads/{sample}_2_val_2.fq",sample=SAMPLES)
+  output:
+    r1_report = "post-processing/{sample}_1_val_1_fastqc.html",
+    r2_report = "post-processing/{sample}_2_val_2_fastqc.html"
+  conda:
+    "envs/fastqc-env.yaml"
+  threads:
+    10
+  shell:
+    """
+    fastqc {input.r1} {input.r2} -o post-processing --threads {threads} && \
+    rm post-processing/*.zip
+    """
+
+rule multiqc_post_processing:
+  input:
+    in1 = expand("post-processing/{sample}_1_val_1_fastqc.html", sample=SAMPLES),
+    in2 = expand("post-processing/{sample}_2_val_2_fastqc.html", sample=SAMPLES),
+    in3 = expand("post-processing/{sample}_1.fastq_trimming_report.txt",sample=SAMPLES),
+    in4 = expand("post-processing/{sample}_2.fastq_trimming_report.txt",sample=SAMPLES)
+  output:
+    "multiqc/post_processing_report.html"
+  conda:
+    "envs/multiqc-env.yaml"
+  shell:
+    "multiqc post-processing -o {output}"
+
+rule hisat_build_index:
+  input:
+    genome = f"reference/genome.fa"
+  output:
+    touch("reference/genome-index/genome.ht2.done")
+  conda:
+    "envs/hisat2-env.yaml"
+  shell:
+    """
+    mkdir -p reference/genome-index
+    hisat2-build reference/genome.fa reference/genome-index/genome && touch {output}
+    """
+
+rule hisat_map_reads:
+  input:
+    r1 = "data/trimmed_reads/{sample}_1_val_1.fq",
+    r2 = "data/trimmed_reads/{sample}_2_val_2.fq",
+    idx = "reference/genome-index/genome.ht2.done"
+  output:
+    "data/sam-files/{sample}.sam"
+  conda:
+    "envs/hisat2-env.yaml"
+  shell:
+    "hisat2 -x reference/genome-index/genome -1 {input.r1} -2 {input.r2} -S {output}"
+
+rule convert_to_bam:
+  input:
+    "data/sam-files/{sample}.sam"
+  output:
+    bam = "data/bam-files/{sample}.bam",
+    sorted_bam = "data/bam-files/{sample}_sorted.bam"
+  conda:
+    "envs/samtools-env.yaml"
+  shell:
+    """
+    samtools view -bS {input} > {output.bam} && samtools sort {output.bam} -o {output.sorted_bam} && rm data/bam-files/*.bam
+    """
+
+rule get_counts_matrix:
+  input:
+    sorted_bam_files = expand("data/bam-files/{sample}_sorted.bam",sample=SAMPLES),
+    gtf = f"reference/{config['reference_genome_gtf']}"
+  output:
+    f1 = "results/final_counts.txt",
+    f2 = "results/final_counts.txt.summary"
+  conda:
+    "envs/featureCounts-env.yaml"
+  shell:
+    """
+    featureCounts -p -O -a {input.gtf} -o {output.f1} {input.sorted_bam_files}
+    """
+
+
+  
